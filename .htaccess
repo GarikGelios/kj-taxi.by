@@ -1,1 +1,11 @@
 DirectoryIndex /app/index.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -f
+
+RewriteRule ^(.+) $1 [L]
+
+RewriteCond %{DOCUMENT_ROOT}/app%{REQUEST_URI} -f
+
+RewriteRule ^(.+) /app/$1 [L]
