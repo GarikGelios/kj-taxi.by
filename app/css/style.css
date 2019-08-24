@@ -1,0 +1,167 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #F7C119;
+}
+
+.btn-primary {
+  color: #000000 !important;
+  background-color: #F7C119;
+  border-color: #A17B08;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #F7C119;
+  border-color: #A17B08;
+  -webkit-box-shadow: 0 0 0 0.2rem #FBDD7F;
+          box-shadow: 0 0 0 0.2rem #FBDD7F;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #F7C119;
+  border-color: #A17B08;
+}
+
+.btn-primary:focus {
+  background-color: #F7C119;
+  border-color: #A17B08;
+  -webkit-box-shadow: 0 0 0 0.2rem #FBDD7F;
+          box-shadow: 0 0 0 0.2rem #FBDD7F;
+}
+
+/* Remove outline on the forms and links */
+*:active, *:hover, *:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+  outline: 0;
+}
+
+h1 {
+  color: #F7C119;
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: x-large;
+  }
+}
+
+.first-screen {
+  background-image: url(../assets/minsk.jpg);
+  height: 451px;
+}
+
+.main-phone {
+  font-size: xx-large;
+}
+
+.first-screen__taxi-car {
+  max-width: 723px;
+}
+
+.mt-6 {
+  margin-top: 6rem !important;
+}
+
+.mt-7 {
+  margin-top: 12rem !important;
+}
+
+.bg-dark {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+@use postcss-nested;
+.navbar-toggler-icon {
+  width: 50px;
+  height: 50px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  label {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  --length: 24;
+  --offset: -38;
+  stroke-dasharray: var(--length) var(--total-length);
+  stroke-dashoffset: var(--offset);
+  -webkit-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+circle {
+  fill: #fff3;
+  opacity: 0;
+}
+
+label:hover circle {
+  opacity: 1;
+}
+
+.cross input:checked + svg .line--1,
+.cross input:checked + svg .line--3 {
+  --length: 22.627416998;
+}
+
+.cross input:checked + svg .line--2 {
+  --length: 0;
+}
+
+.back input:checked + svg .line--1,
+.back input:checked + svg .line--3 {
+  --length: 8.602325267;
+}
+
+.menu--1 {
+  background-color: #3f77e9;
+}
+
+.menu--1 .line--1,
+.menu--1 .line--3 {
+  --total-length: 126.64183044433594;
+}
+
+.menu--1 .line--2 {
+  --total-length: 70;
+}
+
+.menu--1 input:checked + svg .line--1,
+.menu--1 input:checked + svg .line--3 {
+  --offset: -94.1149185097;
+}
+
+.menu--1 input:checked + svg .line--2 {
+  --offset: -50;
+}

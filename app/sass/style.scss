@@ -1,0 +1,10 @@
+@import "helpers/_bootstrap-functions";
+@import "helpers/_bootstrap-variables";
+@import "helpers/_bootstrap-breakpoints";
+@import "helpers/_variables";         //переменные загружать первыми
+@import "helpers/_mixins";            //
+@import "helpers/_placeholders";      //
+@import "pages/_index";               //файл с общими стилями для документа
+@import "layout/_footer";             // -//-для футера
+@import "layout/_header";             // -//- для хедера
+@import "components/_burger-button";  // -//- для мобильного бургер меню

@@ -1,0 +1,34 @@
+{
+  "name": "projectarchetype",
+  "version": "1.0.0",
+  "description": "the basic architecture of the project in the GULP build",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "garikTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarikGelios/ProjectArchetype.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "js",
+    "gulp"
+  ],
+  "author": "GarikGelios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GarikGelios/ProjectArchetype/issues"
+  },
+  "homepage": "https://github.com/GarikGelios/ProjectArchetype#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-inline-css": "^3.3.1",
+    "gulp-sass": "^4.0.2"
+  }
+}
