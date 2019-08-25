@@ -7,11 +7,11 @@
   height: 50px;
 }
 
-input {
+.burger_input {
   display: none;
 }
 
-label {
+.burger_label {
   display: block;
   cursor: pointer;
   position: absolute;
@@ -22,7 +22,7 @@ label {
 }
 
 @media (min-aspect-ratio: 1/1) {
-  label {
+  .burger_label {
     width: 30px;
     height: 30px;
   }
@@ -46,11 +46,11 @@ circle {
   opacity: 0;
 }
 
-label:hover circle {
+.burger_label:hover circle {
   opacity: 1;
 }
 
-.cross input:checked+svg {
+.burger_cross input:checked+svg {
   .line--1,
   .line--3 {
     --length: 22.627416998;
@@ -67,7 +67,7 @@ label:hover circle {
   }
 }
 
-.menu--1 {
+.burger_menu--1 {
   background-color: #3f77e9;
   .line--1,
   .line--3 {

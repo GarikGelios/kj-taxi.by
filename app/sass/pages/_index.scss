@@ -8,14 +8,21 @@ body {
 .btn-primary {
   @include btn-primary;
 }
+.btn-secondary {
+  @include btn-secondary;
+}
+.bg-dark {
+  background-color: $black-color!important;
+}
+.bg-yellow-md {
+  @include media-breakpoint-down(md) {
+    background-color: $primary-color;
+  }
+}
 /* Remove outline on the forms and links */
 *:active, *:hover, *:focus {
   outline: 0;
   outline-offset: 0;
-}
-.navbar-toggler:focus,
-.navbar-toggler:hover{
-  outline: 0;
 }
 h1 {
   color: $primary-color;
@@ -45,4 +52,13 @@ h1 {
 }
 .mt-7 {
   margin-top: 12rem!important;
+}
+.mt-8 {
+  margin-top: 24rem!important;
+}
+.mt-md-8-sm-7 {
+  margin-top: 24rem!important;
+  @include media-breakpoint-down(sm) {
+    margin-top: 12rem!important;
+  }
 }

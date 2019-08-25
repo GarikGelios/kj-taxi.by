@@ -1,3 +1,7 @@
-.bg-dark {
-  @include bg-dark;
+.bg-dark-op {
+  @include bg-dark-op;
+}
+.navbar-toggler:focus,
+.navbar-toggler:hover{
+  outline: 0;
 }

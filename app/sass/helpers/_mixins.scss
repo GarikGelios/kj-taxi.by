@@ -25,6 +25,27 @@
     box-shadow: 0 0 0 0.2rem $primary-color-light;
     }
 }
-@mixin bg-dark() {
-  background-color: rgba( $black-color, .5 )!important;
+@mixin btn-secondary ($color: $white-color, $background-color: $black-color, $border-color: $black-color ) {
+  color: $white-color!important;
+  background-color: $black-color;
+  border-color: $black-color;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  &:hover {
+    background-color: $black-color;
+    border-color: $black-color;
+    box-shadow: 0 0 0 0.2rem $primary-color-light;
+  }
+  &:not(:disabled):not(.disabled):active {
+    background-color: $black-color;
+    border-color: $black-color;
+  }
+  &:focus {
+    background-color: $black-color;
+    border-color: $black-color;
+    box-shadow: 0 0 0 0.2rem $primary-color-light;
+  }
+}
+@mixin bg-dark-op() {
+  background-color: rgba( $black-color, .8 )!important;
 }

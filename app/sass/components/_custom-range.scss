@@ -1,0 +1,14 @@
+.custom-range::-webkit-slider-thumb {
+  background: $primary-color;
+  &:hover {
+    background: $primary-color;
+  }
+}
+
+.custom-range::-moz-range-thumb {
+  background: $primary-color;
+}
+
+.custom-range::-ms-thumb {
+  background: $primary-color;
+}

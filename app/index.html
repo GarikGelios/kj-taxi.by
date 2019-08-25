@@ -8,8 +8,14 @@
     <meta name="keywords" content="такси, работа, вакансия, перевозчик, 135, 7900, 7788, яндекс, uber">
     <meta name="author" content="KJ-TAXI">
 
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Slick slider style with the jsDelivr CDN -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,17 +24,17 @@
 </head>
 <body class="d-flex flex-column flex-nowrap m-0">
 <main role="main" class="flex-shrink-0">
-    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md fixed-top bg-dark-op">
         <a class="navbar-brand font-weight-bold text-white" href="#">
             <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
             KJ-GROUP
         </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon">
-                 <div class="grid">
-                     <div class="menu cross menu--1">
-                         <label>
-                             <input type="checkbox">
+                 <div>
+                     <div class="burger_menu burger_cross burger_menu--1">
+                         <label class="burger_label">
+                             <input type="checkbox" class="burger_input">
                              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                  <circle cx="50" cy="50" r="30" />
                                  <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
@@ -43,7 +49,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav col-xl-8 justify-content-between">
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-primary" href="#">Отправить анкету<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary" href="#form_profile">Отправить анкету<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,14 +76,144 @@
         <div class="row align-items-center justify-content-center flex-column position-relative">
             <h1 class="mt-6 text-center p-2">Зарабатывай в такси от 1600BYN в месяц!</h1>
             <a class="text-white font-weight-bold main-phone p-2 " href="tel:+375293917716"> +375 29 391-77-16 </a>
-            <h2 class="lead text-white text-center p-2">Звони! Получишь помощь с оформлением и начнёшь зарабатывать на следующий день!</h2>
+            <h2 class="lead text-white text-center p-2">Звони! Получишь помощь с оформлением и скоро начнёшь зарабатывать хорошие деньги!</h2>
             <img class="first-screen__taxi-car w-100 my-5 p-2" src="assets/taxi-car.png" alt="желтый автомобиль такси">
         </div>
     </div>
-    <div class="container main-form">
-        <div class="row mt-7">
-            <h2>Hello!</h2>
+    <div class="container mt-md-8-sm-7">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-uppercase bg-yellow-md">Лучшая цена в Минске</h3>
+                <h2 class="text-uppercase bg-yellow-md">Заполни анкету и тебя оформят на работу</h2>
+                <p>Достойная заробтная плата, где ты решаешь сколько ты можешь заработать.
+                   Всегда чёткая и понятная зависимость вложенных усилий и количества полученных денег.
+                   Никаких испытательных сроков и обучающих курсов — садишся за руль и начинаешь зарабатывать!
+                   Все бумажные работы, договора и налоги берёт на себя перевозчик, тебе остаётся только возить людей и считать деньги.
+                   <br> Заполняй анкету и твой график работы будет зависеть только от тебя! </p>
+            </div>
+            <div class="col-md-6">
+                <!-- начало: Форма заявки -->
+                <form class="bg-white mb-5" id="form_profile" oninput="formExperience.value=parseInt(form_experience.value)">
+                    <legend class="bg-dark text-white p-3">Анкета водителя</legend>
+                    <fieldset class="p-3">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="form_name" class="m-0">Имя</label>
+                                <input type="text" class="form-control" id="form_name" placeholder="Frank" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="form_surname" class="m-0">Фамилия</label>
+                                <input type="text" class="form-control" id="form_surname" placeholder="Martin" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="form_middlename" class="m-0">Отчество</label>
+                                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="form_birthday" class="m-0">Дата рождения</label>
+                                <input type="date" class="form-control" id="form_birthday" value="1967-07-26" min="1960-01-01" max="2007-12-31" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="form_region" class="m-0">Место проживания</label>
+                                <select id="form_region" class="form-control">
+                                    <option selected>Минская обл.</option>
+                                    <option>Витебская обл.</option>
+                                    <option>Могилёвская обл.</option>
+                                    <option>Гомельская обл.</option>
+                                    <option>Брестская обл.</option>
+                                    <option>Гродненская обл.</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="form_locality" class="m-0">город/поселок</label>
+                                <input type="text" class="form-control" id="form_locality" placeholder="д. Великая Борздынь" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="form_experience" class="m-0">Стаж вождения, полных лет :</label>
+                                <output class="font-weight-bold" name="formExperience" for="form_experience">5</output>
+                                <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience" value="5" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="form_carbrand" class="m-0">Марка и модель автомобиля</label>
+                                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="form_caryear" class="m-0">год выпуска</label>
+                                <input type="number" class="form-control" id="form_caryear" min="2010" step="1" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="form_name" class="m-0">email</label>
+                                <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp" placeholder="transporter@kj-group.com">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="form_surname" class="m-0">телефон</label>
+                                <input type="number" class="form-control" id="form_phone" placeholder="+375 29 391-77-16" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="form_comment" class="m-0">Комментарий к анкете</label>
+                                <textarea type="text" class="form-control" id="form_comment" rows="3" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-secondary btn-block">Отправить анкету</button>
+                    </fieldset>
+                </form>
+                <!-- конец: Форма заявки -->
+            </div>
         </div>
+    </div>
+    <div class="container-fluid bg-white">
+            <div class="row flex-column align-items-center">
+                <h2 class="text-center">Доступные службы такси</h2>
+                <div class="container">
+                    <!-- Слайдер со службами такси -->
+                    <div class="carousel_taxi-services w-100 card-deck">
+                        <div class="card">
+                            <img src="assets/taxi1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/taxi2.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/taxi3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/taxi4.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </main>
 <footer class="footer mt-auto py-3 d-flex">
@@ -90,5 +226,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Slick slider JS with the jsDelivr CDN -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- Custom JS -->
+<script src="js/common.js"></script>
 </body>
 </html>
