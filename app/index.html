@@ -29,6 +29,7 @@
             <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
             KJ-GROUP
         </a>
+        <button class="nav-link btn btn-primary mx-auto scroll-to-form-btn" onclick="focusMethod()">Заполнить анкету<span class="sr-only">(current)</span></button>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon">
                  <div>
@@ -46,11 +47,11 @@
                  </div>
              </span>
          </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav col-xl-8 justify-content-between">
-                <li class="nav-item active">
-                    <button class="nav-link btn btn-primary scroll-btn">Отправить анкету<span class="sr-only">(current)</span></button>
-                </li>
+        <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav col-xl-12 justify-content-between">
+                <!--<li class="nav-item active">-->
+                    <!--<button class="nav-link btn btn-primary scroll-btn">Отправить анкету<span class="sr-only">(current)</span></button>-->
+                <!--</li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Службы такси
@@ -74,13 +75,13 @@
     <div class="container-fluid first-screen">
         <!--<div class="fade-img position-absolute w-100"></div>-->
         <div class="row align-items-center justify-content-center flex-column position-relative">
-            <h1 class="mt-6 text-center p-2">Зарабатывай в такси от 1600BYN в месяц!</h1>
+            <h1 class="mt-md-6-sm-8 text-center p-2">Зарабатывай в такси от 1600BYN в месяц!</h1>
             <a class="text-white font-weight-bold main-phone p-2 " href="tel:+375293917716"> +375 29 391-77-16 </a>
             <h2 class="lead text-white text-center p-2">Звони! Получишь помощь с оформлением и скоро начнёшь зарабатывать хорошие деньги!</h2>
-            <img class="first-screen__taxi-car w-100 my-5 p-2" src="assets/taxi-car.png" alt="желтый автомобиль такси">
+            <img class="first-screen__taxi-car w-100 mb-2 p-2" src="assets/taxi-car.png" alt="желтый автомобиль такси">
         </div>
     </div>
-    <div class="container mt-md-8-sm-7">
+    <div class="container mt-md-20-sm-7">
         <div class="row">
             <div class="col-md-6">
                 <h3 class="text-uppercase bg-yellow-md">Лучшая цена в Минске</h3>
@@ -99,11 +100,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">Имя</label>
-                                <input type="text" class="form-control" id="form_name" placeholder="Frank" required>
+                                <input type="text" class="form-control" id="form_name" placeholder="Jason" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_surname" class="m-0">Фамилия</label>
-                                <input type="text" class="form-control" id="form_surname" placeholder="Martin" required>
+                                <input type="text" class="form-control" id="form_surname" placeholder="Statham" required>
                             </div>
                         </div>
                         <div class="form-row">

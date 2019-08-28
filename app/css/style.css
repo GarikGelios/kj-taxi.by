@@ -99,25 +99,31 @@ h1 {
   max-width: 723px;
 }
 
-.mt-6 {
+.mt-md-6-sm-8 {
   margin-top: 6rem !important;
 }
 
-.mt-7 {
+@media (max-width: 767.98px) {
+  .mt-md-6-sm-8 {
+    margin-top: 8rem !important;
+  }
+}
+
+.mt-12 {
   margin-top: 12rem !important;
 }
 
 .mt-8 {
-  margin-top: 24rem !important;
+  margin-top: 20rem !important;
 }
 
-.mt-md-8-sm-7 {
-  margin-top: 24rem !important;
+.mt-md-20-sm-7 {
+  margin-top: 20rem !important;
 }
 
 @media (max-width: 767.98px) {
-  .mt-md-8-sm-7 {
-    margin-top: 12rem !important;
+  .mt-md-20-sm-7 {
+    margin-top: 7rem !important;
   }
 }
 
@@ -128,6 +134,38 @@ h1 {
 .navbar-toggler:focus,
 .navbar-toggler:hover {
   outline: 0;
+}
+
+.navbar-collapse {
+  -webkit-box-ordinal-group: 4;
+  -webkit-order: 3;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.scroll-to-form-btn {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media (max-width: 767.98px) {
+  .scroll-to-form-btn {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }
 
 @use postcss-nested;

@@ -47,18 +47,21 @@ h1 {
 .first-screen__taxi-car {
   max-width: 723px;
 }
-.mt-6 {
+.mt-md-6-sm-8 {
   margin-top: 6rem!important;
+  @include media-breakpoint-down(sm) {
+    margin-top: 8rem!important;
+  }
 }
-.mt-7 {
+.mt-12 {
   margin-top: 12rem!important;
 }
 .mt-8 {
-  margin-top: 24rem!important;
+  margin-top: 20rem!important;
 }
-.mt-md-8-sm-7 {
-  margin-top: 24rem!important;
+.mt-md-20-sm-7 {
+  margin-top: 20rem!important;
   @include media-breakpoint-down(sm) {
-    margin-top: 12rem!important;
+    margin-top: 7rem!important;
   }
 }

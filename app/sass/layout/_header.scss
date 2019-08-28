@@ -5,3 +5,15 @@
 .navbar-toggler:hover{
   outline: 0;
 }
+.navbar-collapse {
+  order: 3;
+  @include media-breakpoint-down(sm) {
+    order: 2;
+  }
+}
+.scroll-to-form-btn{
+  order: 2;
+  @include media-breakpoint-down(sm) {
+    order: 3;
+  }
+}

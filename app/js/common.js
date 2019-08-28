@@ -1,3 +1,7 @@
+"use strict";
+
+// этот код работает в современном режиме
+
 // add here you main JavaScript code
 var test = function() {
   console.log('Hellow world!')
@@ -26,11 +30,6 @@ var eighteenYearAgo = (yyyy - 18) +'-'+mm+'-'+dd;
 var sixteenYearAgo = (yyyy - 60) +'-'+mm+'-'+dd;
 document.getElementById("form_birthday").setAttribute("min", sixteenYearAgo);
 document.getElementById("form_birthday").setAttribute("max", eighteenYearAgo);
-
-// собираем все якоря; устанавливаем время анимации и количество кадров
-const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-    animationTime = 3000,
-    framesCount = 100;
 
 // Slick Slider
 $(document).ready(function(){
@@ -65,11 +64,10 @@ $(document).ready(function(){
 });
 
 //Scroll to form
-var scroll_btn = document.querySelector('.scroll-btn');
+var scroll_btn = document.querySelector('.scroll-to-form-btn');
 const form_profile= document.getElementById('form_profile');
 const y_coordinate_form_profile = form_profile.getBoundingClientRect().top + window.pageYOffset;
-const yOffset = -60;
-
+const yOffset = -120;
 function handleButtonClick() {
     window.scrollTo({
         top: y_coordinate_form_profile + yOffset,
@@ -77,3 +75,7 @@ function handleButtonClick() {
     });
 }
 scroll_btn.addEventListener('click', handleButtonClick);
+
+var focusMethod = function() {
+    document.getElementById("form_name").focus();
+}
