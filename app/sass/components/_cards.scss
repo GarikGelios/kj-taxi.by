@@ -1,0 +1,13 @@
+.card-title{
+  @include media-breakpoint-down(sm) {
+    font-size: 1.0rem;
+  }
+}
+.card-deck .card {
+  @include media-breakpoint-down(sm) {
+    margin: 8px;
+  }
+}
+.slick-prev:before, .slick-next:before {
+  color: $black-color;
+}

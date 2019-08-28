@@ -10,7 +10,6 @@ body {
   color: #000000 !important;
   background-color: #F7C119;
   border-color: #A17B08;
-  border-radius: 2rem;
   font-weight: 600;
 }
 
@@ -37,7 +36,6 @@ body {
   color: #FFFFFF !important;
   background-color: #000000;
   border-color: #000000;
-  border-radius: 0.25rem;
   font-weight: 600;
 }
 
@@ -60,6 +58,10 @@ body {
           box-shadow: 0 0 0 0.2rem #FBDD7F;
 }
 
+.bg-primary {
+  background-color: #F7C119 !important;
+}
+
 .bg-dark {
   background-color: #000000 !important;
 }
@@ -70,14 +72,14 @@ body {
   }
 }
 
+.text-warning {
+  color: #F7C119 !important;
+}
+
 /* Remove outline on the forms and links */
 *:active, *:hover, *:focus {
   outline: 0;
   outline-offset: 0;
-}
-
-h1 {
-  color: #F7C119;
 }
 
 @media (max-width: 767.98px) {
@@ -99,31 +101,45 @@ h1 {
   max-width: 723px;
 }
 
+.mt-6 {
+  margin-top: 6rem;
+}
+
 .mt-md-6-sm-8 {
-  margin-top: 6rem !important;
+  margin-top: 6rem;
 }
 
 @media (max-width: 767.98px) {
   .mt-md-6-sm-8 {
-    margin-top: 8rem !important;
+    margin-top: 8rem;
   }
 }
 
 .mt-12 {
-  margin-top: 12rem !important;
+  margin-top: 12rem;
 }
 
 .mt-8 {
-  margin-top: 20rem !important;
+  margin-top: 20rem;
 }
 
 .mt-md-20-sm-7 {
-  margin-top: 20rem !important;
+  margin-top: 20rem;
 }
 
 @media (max-width: 767.98px) {
   .mt-md-20-sm-7 {
-    margin-top: 7rem !important;
+    margin-top: 7rem;
+  }
+}
+
+.pt-md-7-sm-4 {
+  padding-top: 7rem;
+}
+
+@media (max-width: 767.98px) {
+  .pt-md-7-sm-4 {
+    padding-top: 1.5rem;
   }
 }
 
@@ -269,4 +285,20 @@ circle {
 
 .custom-range::-ms-thumb {
   background: #F7C119;
+}
+
+@media (max-width: 767.98px) {
+  .card-title {
+    font-size: 1.0rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-deck .card {
+    margin: 8px;
+  }
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #000000;
 }

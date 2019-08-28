@@ -8,7 +8,6 @@
   color: $black-color!important;
   background-color: $primary-color;
   border-color: $secondary-color;
-  border-radius: 2rem;
   font-weight: 600;
   &:hover {
     background-color: $primary-color;
@@ -29,7 +28,6 @@
   color: $white-color!important;
   background-color: $black-color;
   border-color: $black-color;
-  border-radius: 0.25rem;
   font-weight: 600;
   &:hover {
     background-color: $black-color;
