@@ -93,6 +93,13 @@ body {
   height: 451px;
 }
 
+.profit-screen {
+  background-image: url(../assets/profit.jpg);
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+}
+
 .main-phone {
   font-size: xx-large;
 }
@@ -141,6 +148,20 @@ body {
   .pt-md-7-sm-4 {
     padding-top: 1.5rem;
   }
+}
+
+.pt-md-4-sm-1-5 {
+  padding-top: 4rem;
+}
+
+@media (max-width: 767.98px) {
+  .pt-md-4-sm-1-5 {
+    padding-top: 1.5rem;
+  }
+}
+
+svg {
+  fill: red;
 }
 
 .bg-dark-op {

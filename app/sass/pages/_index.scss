@@ -39,13 +39,11 @@ h1 {
   background-image: url(../assets/minsk.jpg);
   height: 451px;
 }
-//.fade-img {
-//  background-color: $black-color;
-//  height: 100%;
-//  left: 0;
-//  top: 0;
-//  opacity: 0.5;
-//}
+.profit-screen{
+  background-image: url(../assets/profit.jpg);
+  background-size: cover;
+  background-position: center;
+}
 .main-phone {
   font-size: xx-large;
 }
@@ -78,4 +76,13 @@ h1 {
   @include media-breakpoint-down(sm) {
     padding-top: 1.5rem;
   }
+}
+.pt-md-4-sm-1-5{
+  padding-top: 4rem;
+  @include media-breakpoint-down(sm) {
+    padding-top: 1.5rem;
+  }
+}
+svg {
+  fill: red;
 }

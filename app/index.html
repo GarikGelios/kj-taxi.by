@@ -7,6 +7,7 @@
     <meta name="description" content="Оформление на службы такси города Минска через официального перевозчика">
     <meta name="keywords" content="такси, работа, вакансия, перевозчик, 135, 7900, 7788, яндекс, uber">
     <meta name="author" content="KJ-TAXI">
+    <meta name="theme-color" content="#000000">
 
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
 
@@ -31,8 +32,7 @@
             KJ-GROUP
         </a>
         <button class="nav-link btn btn-primary rounded-pill mx-auto scroll-to-form-btn" onclick="focusMethod()">
-            Заполнить
-            анкету<span class="sr-only">(current)</span></button>
+            Заполнить анкету<span class="sr-only">(current)</span></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon">
@@ -90,7 +90,7 @@
         </div>
     </div>
     <!-- Текст и контактная форма с анкетой для соискателя -->
-    <div class="container mt-md-20-sm-7">
+    <div class="container mt-md-20-sm-7 pt-5">
         <div class="row">
             <div class="col-md-6">
                 <h3 class="text-uppercase bg-yellow-md">Лучшая цена в Минске</h3>
@@ -196,14 +196,14 @@
     <!-- Карусель с доступными службами такси -->
     <div class="container-fluid bg-white pb-5">
         <div class="row flex-column align-items-center">
-            <h2 class="mt-5 mb-5">Доступные службы такси</h2>
+            <h2 class="mt-5 mb-5 text-center">Доступные службы такси</h2>
             <div class="container">
                 <!-- Слайдер со службами такси -->
                 <div class="carousel_taxi-services w-100 card-deck">
                     <div class="card border-0">
                         <img src="assets/taxi1.png" class="card-img-top position-absolute p-3" alt="...">
                         <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title">"Столица" 135</h3>
+                            <h3 class="card-title pt-md-4-sm-1-5">"Столица" 135</h3>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
                                 content.</p>
                             <a href="#" class="btn btn-secondary">Подробнее ...</a>
@@ -212,7 +212,7 @@
                     <div class="card border-0">
                         <img src="assets/taxi2.png" class="card-img-top position-absolute p-3" alt="...">
                         <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title">"Командир" 7900</h3>
+                            <h3 class="card-title pt-md-4-sm-1-5">"Командир" 7900</h3>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
                                 content.</p>
                             <a href="#" class="btn btn-secondary">Подробнее ...</a>
@@ -221,7 +221,7 @@
                     <div class="card border-0">
                         <img src="assets/taxi3.png" class="card-img-top position-absolute p-3" alt="...">
                         <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title">"Алмаз" 7788</h3>
+                            <h3 class="card-title pt-md-4-sm-1-5">"Алмаз" 7788</h3>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
                                 content.</p>
                             <a href="#" class="btn btn-secondary">Подробнее ...</a>
@@ -230,7 +230,7 @@
                     <div class="card border-0">
                         <img src="assets/taxi4.png" class="card-img-top position-absolute p-3" alt="...">
                         <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title">Яндекс.Такси</h3>
+                            <h3 class="card-title pt-md-4-sm-1-5">Яндекс.Такси</h3>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
                                 content.</p>
                             <a href="#" class="btn btn-secondary">Подробнее ...</a>
@@ -239,7 +239,7 @@
                     <div class="card border-0">
                         <img src="assets/taxi2.png" class="card-img-top position-absolute p-3" alt="...">
                         <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title">Uber</h3>
+                            <h3 class="card-title pt-md-4-sm-1-5">Uber</h3>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
                                 content.</p>
                             <a href="#" class="btn btn-secondary">Подробнее ...</a>
@@ -250,7 +250,7 @@
         </div>
     </div>
     <!-- Приемущества сотрудничества с перевозчиков KJ-GROUP -->
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid profit-screen">
         <div class="row">
             <h2 class="mx-auto text-center text-white mb-5 mt-5">Выгодня сделка — комфортные условия!</h2>
         </div>
@@ -258,66 +258,94 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li class="media">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="taxi">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
-                        <li class="media my-4">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
-                        <li class="media">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li class="media">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
-                        <li class="media my-4">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
-                        <li class="media">
-                            <img src="..." class="mr-3" alt="...">
-                            <div class="media-body">
+                        <li class="d-flex flex-wrap mb-5">
+                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                    scelerisque ante
+                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-white">
+        <div class="row">
+            <h2 class="mx-auto text-center mb-5 mt-5">Выгодня сделка — комфортные условия!</h2>
+        </div>
+        <div class="container">
+            <div class="ro">
+                <p>Hello</p>
             </div>
         </div>
     </div>
