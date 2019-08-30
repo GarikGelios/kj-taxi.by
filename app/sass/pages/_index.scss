@@ -35,19 +35,24 @@ h1 {
     font-size: x-large;
   }
 }
-.first-screen {
+.screen-first {
   background-image: url(../assets/minsk.jpg);
   height: 451px;
 }
-.profit-screen{
-  background-image: url(../assets/profit.jpg);
+.screen-profit{
+   background-image: url(../assets/profit.jpg);
+   background-size: cover;
+   background-position: center;
+ }
+.screen-drivers{
+  background-image: url(../assets/drivers.jpg);
   background-size: cover;
   background-position: center;
 }
 .main-phone {
   font-size: xx-large;
 }
-.first-screen__taxi-car {
+.screen-first__taxi-car {
   max-width: 723px;
 }
 .mt-6 {
@@ -83,6 +88,11 @@ h1 {
     padding-top: 1.5rem;
   }
 }
-svg {
-  fill: red;
+.screen-questions{
+  .card-img{
+    width:200px!important;
+  }
+}
+.social-icon{
+  width: 20px;
 }
