@@ -25,6 +25,9 @@ body {
 .text-warning{
   color: $primary-color!important;
 }
+.text-dark {
+  color: $black-color!important;
+}
 /* Remove outline on the forms and links */
 *:active, *:hover, *:focus {
   outline: 0;
@@ -95,4 +98,7 @@ h1 {
 }
 .social-icon{
   width: 20px;
+}
+legend{
+  margin-bottom: 0rem;
 }

@@ -25,7 +25,7 @@
 
 </head>
 <body class="d-flex flex-column flex-nowrap m-0">
-<main role="main" class="flex-shrink-0">
+<main class="flex-shrink-0">
     <nav class="navbar navbar-expand-md fixed-top bg-dark-op">
         <a class="navbar-brand font-weight-bold text-white" href="#">
             <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
@@ -35,9 +35,7 @@
             Заполнить анкету<span class="sr-only">(current)</span></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon">
-                 <div>
-                     <div class="burger_menu burger_cross burger_menu--1">
+                     <span class="burger_menu burger_cross burger_menu--1">
                          <label class="burger_label">
                              <input type="checkbox" class="burger_input">
                              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -47,9 +45,7 @@
                                  <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65"/>
                              </svg>
                          </label>
-                     </div>
-                 </div>
-             </span>
+                     </span>
         </button>
         <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav col-xl-12 justify-content-between">
@@ -104,9 +100,10 @@
             </div>
             <div class="col-md-6">
                 <!-- начало: Форма заявки -->
+                <legend class="bg-dark text-white p-3">Анкета водителя</legend>
                 <form class="bg-white mb-5" id="form_profile"
                       oninput="formExperience.value=parseInt(form_experience.value)">
-                    <legend class="bg-dark text-white p-3">Анкета водителя</legend>
+
                     <fieldset class="p-3">
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -153,7 +150,7 @@
                                 <label for="form_experience" class="m-0">Стаж вождения, полных лет :</label>
                                 <output class="font-weight-bold" name="formExperience" for="form_experience">5</output>
                                 <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience"
-                                       value="5" required>
+                                       value="5">
                             </div>
                         </div>
                         <div class="form-row">
@@ -171,7 +168,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">email</label>
-                                <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp"
+                                <input type="email" class="form-control" id="form_email"
                                        placeholder="transporter@kj-group.com">
                             </div>
                             <div class="form-group col-md-6">
@@ -357,14 +354,17 @@
                                     lead-in to additional content. This content is a little bit longer.</p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseEarnings" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        открыть текст &#8690;
-                                    </a>
+                                        <a class="" data-toggle="collapse" href="#collapseEarnings" role="button"
+                                           aria-expanded="false" aria-controls="collapseEarnings">
+                                            открыть текст &#8690;
+                                        </a>
                                     </small>
                                 </p>
                                 <div class="collapse" id="collapseEarnings">
                                     <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                        anderson cred nesciunt sapiente ea proident.
                                         <a href="https://taxi.yandex.ru/rabota/">см. вопросы тут</a>
                                     </div>
                                 </div>
@@ -384,14 +384,17 @@
                                     lead-in to additional content. This content is a little bit longer.</p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseTaxes" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <a class="" data-toggle="collapse" href="#collapseTaxes" role="button"
+                                           aria-expanded="false" aria-controls="collapseTaxes">
                                             открыть текст &#8690;
                                         </a>
                                     </small>
                                 </p>
                                 <div class="collapse" id="collapseTaxes">
                                     <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                        anderson cred nesciunt sapiente ea proident.
                                         <a href="https://konkordtaxi.com/">см. текст тут</a>
                                     </div>
                                 </div>
@@ -400,31 +403,34 @@
                     </div>
                 </div>
                 <div class="card mb-3 col-md-12">
-                <div class="row no-gutters">
-                    <div class="col-md-3 p-4 d-flex justify-content-center align-items-start">
-                        <img src="assets/taxi-car.svg" class="card-img  p-4" alt="...">
-                    </div>
-                    <div class="col-md-9">
-                        <div class="card-body">
-                            <h5 class="card-title">Какой нужен автомобиль для работы в такси?</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <a class="" data-toggle="collapse" href="#collapseTaxi-car" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        открыть текст &#8690;
-                                    </a>
-                                </small>
-                            </p>
-                            <div class="collapse" id="collapseTaxi-car">
-                                <div class="card card-body border-0 p-0">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    <div class="row no-gutters">
+                        <div class="col-md-3 p-4 d-flex justify-content-center align-items-start">
+                            <img src="assets/taxi-car.svg" class="card-img  p-4" alt="...">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">Какой нужен автомобиль для работы в такси?</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <a class="" data-toggle="collapse" href="#collapseTaxi-car" role="button"
+                                           aria-expanded="false" aria-controls="collapseTaxi-car">
+                                            открыть текст &#8690;
+                                        </a>
+                                    </small>
+                                </p>
+                                <div class="collapse" id="collapseTaxi-car">
+                                    <div class="card card-body border-0 p-0">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                        anderson cred nesciunt sapiente ea proident.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="card mb-3 col-md-12">
                     <div class="row no-gutters">
                         <div class="col-md-3 p-4 d-flex justify-content-center align-items-start">
@@ -437,14 +443,17 @@
                                     lead-in to additional content. This content is a little bit longer.</p>
                                 <p class="card-text">
                                     <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseChoose-service" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <a class="" data-toggle="collapse" href="#collapseChoose-service" role="button"
+                                           aria-expanded="false" aria-controls="collapseChoose-service">
                                             открыть текст &#8690;
                                         </a>
                                     </small>
                                 </p>
                                 <div class="collapse" id="collapseChoose-service">
                                     <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                        anderson cred nesciunt sapiente ea proident.
                                     </div>
                                 </div>
                             </div>
@@ -459,7 +468,7 @@
             <h2 class="mx-auto text-center text-white mb-5 mt-5">Водите работающие с KJ-Group — наша команда!</h2>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-md-6">
                     <div class="card mb-3 bg-dark text-white" style="max-width: 540px;">
                         <div class="row no-gutters">
@@ -469,15 +478,20 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Даниэль Моралес</h5>
-                                    <p class="card-text">Бросил работу доставщика пиццы, ради того чтобы осуществить свою давнюю мечту — стать водителем такси — Peugeot 406, способного развивать бешеную скорость. </p>
-                                    <p class="card-text"><small class="text-muted">
-                                        <a href="#" target="_blank"><img
-                                            src="assets/vk-social-network-logo.svg" alt="vk" class="social-icon"></a>
-                                        <a href="#" target="_blank"><img
-                                            src="assets/telegram.svg" alt="vk" class="social-icon"></a>
-                                        <a href="#" target="_blank"><img
-                                                src="assets/instagram.svg" alt="vk" class="social-icon"></a>
-                                    </small></p>
+                                    <p class="card-text">Бросил работу доставщика пиццы, ради того чтобы осуществить
+                                        свою давнюю мечту — стать водителем такси — Peugeot 406, способного развивать
+                                        бешеную скорость. </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <a href="#" target="_blank"><img
+                                                    src="assets/vk-social-network-logo.svg" alt="vk"
+                                                    class="social-icon"></a>
+                                            <a href="#" target="_blank"><img
+                                                    src="assets/telegram.svg" alt="vk" class="social-icon"></a>
+                                            <a href="#" target="_blank"><img
+                                                    src="assets/instagram.svg" alt="vk" class="social-icon"></a>
+                                        </small>
+                                    </p>
 
                                 </div>
                             </div>
@@ -491,8 +505,11 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Трэвис Бикл</h5>
-                                    <p class="card-text">Одинокий 26-летний мужчина, служил в морской пехоте. Страдая от хронической бессонницы, устраилс работать ночным таксистом в Нью-Йорке.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text">Одинокий 26-летний мужчина, служил в морской пехоте. Страдая от
+                                        хронической бессонницы, устраилс работать ночным таксистом в Нью-Йорке.</p>
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -507,8 +524,11 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Корбен Даллас</h5>
-                                    <p class="card-text">Увяз в проблемах своей личной жизни и финансовых неурядицах.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text">Увяз в проблемах своей личной жизни и финансовых
+                                        неурядицах.</p>
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -521,8 +541,11 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Лёлик</h5>
-                                    <p class="card-text">Лёлик под видом таксиста перехватывает Горбункова и везёт его якобы в Дубровку, куда тот собрался к жене и детям.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text">Лёлик под видом таксиста перехватывает Горбункова и везёт его
+                                        якобы в Дубровку, куда тот собрался к жене и детям.</p>
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -535,8 +558,11 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Анфиса Чехова</h5>
-                                    <p class="card-text">Не сильно ориентируюсь по городу. Поэтому мой первый вопрос к пассажирам будет: «Дорогу покажешь?»</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text">Не сильно ориентируюсь по городу. Поэтому мой первый вопрос к
+                                        пассажирам будет: «Дорогу покажешь?»</p>
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -548,14 +574,20 @@
     </div>
     <div class="container">
         <div class="row">
-            <h2 class="mx-auto text-center mb-5 mt-5">Присоединяйся к KJ-Group и получи лучшую поддержку в новой работе!</h2>
+            <h2 class="mx-auto text-center mb-5 mt-5 text-dark">Присоединяйся к KJ-Group и получи лучшую поддержку в
+                новой работе!</h2>
+            <p class="text-center mb-5">Уже работаешь в другой службе такси, но хочешь поменять? Подключим тебя и ты
+                куда пожелаешь. Далее выбор за тобой, работать на личном автомобиле или на автомобиле компании .
+                Подключение производится дистанционно, не нужно никуда ехать, просто заполняй анкету и с тобой
+                свяжутся.</p>
         </div>
     </div>
 </main>
 <footer class="footer mt-auto py-3 d-flex bg-dark">
     <div class="container">
         <span class="text-muted">Place sticky footer content here.</span>
-        <a href="https://www.freepik.com/free-photos-vectors/business" target="_blank">Business vector created by macrovector_official - www.freepik.com</a>
+        <a href="https://www.freepik.com/free-photos-vectors/business" target="_blank">Business vector created by
+            macrovector_official - www.freepik.com</a>
     </div>
 </footer>
 <!-- Optional JavaScript -->
@@ -570,7 +602,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <!-- Slick slider JS with the jsDelivr CDN -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- Custom JS -->
 <script src="js/common.js"></script>
 </body>
