@@ -179,8 +179,8 @@ body {
   width: 20px;
 }
 
-legend {
-  margin-bottom: 0rem;
+.border-warning {
+  border-color: #F7C119 !important;
 }
 
 .bg-dark-op {
