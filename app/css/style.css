@@ -341,3 +341,13 @@ circle {
 .slick-prev:before, .slick-next:before {
   color: #000000;
 }
+
+.minh-232 {
+  min-height: 232px;
+}
+
+@media (max-width: 767.98px) {
+  .card-text {
+    font-size: .8rem;
+  }
+}

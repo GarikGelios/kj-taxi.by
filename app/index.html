@@ -21,7 +21,7 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Работа таксистом в Минске</title>
+    <title>Работа водителем такси в Минске</title>
 
 </head>
 <body class="d-flex flex-column flex-nowrap m-0">
@@ -50,18 +50,8 @@
         </div>
         <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav col-xl-12 justify-content-between">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Службы такси
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">135 "Столица"</a>
-                        <a class="dropdown-item" href="#">7900 "Командир"</a>
-                        <a class="dropdown-item" href="#">7788 "Алмаз"</a>
-                        <a class="dropdown-item" href="#">Яндекс.Такси</a>
-                        <a class="dropdown-item" href="#">Uber</a>
-                    </div>
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link text-white scroll-to-services-btn" tabindex="-1" aria-disabled="true">Службы такси</button>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link btn btn-link text-white scroll-to-conditions-btn" tabindex="-1" aria-disabled="true">Условия перевозчика</button>
@@ -76,7 +66,7 @@
     <div class="container-fluid screen-first">
         <!--<div class="fade-img position-absolute w-100"></div>-->
         <div class="row align-items-center justify-content-center flex-column position-relative">
-            <h1 class="mt-md-6-sm-8 text-center p-2 text-warning">Зарабатывай в такси от 1600BYN в месяц!</h1>
+            <h1 class="mt-md-6-sm-8 text-center p-2 text-warning">Зарабатывай в такси от 1200 рублей в месяц!</h1>
             <a class="text-white font-weight-bold main-phone p-2 " href="tel:+375293917716"> +375 29 391-77-16 </a>
             <h2 class="lead text-white text-center p-2">Звони! Получишь помощь с оформлением и скоро начнёшь
                 зарабатывать хорошие деньги!</h2>
@@ -87,9 +77,9 @@
     <div class="container mt-md-20-sm-7 pt-5">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="text-uppercase bg-yellow-md">Лучшая цена в Минске</h2>
-                <h3 class="text-uppercase bg-yellow-md">Заполни анкету и тебя оформят на работу</h3>
-                <p>Достойная заробтная плата, где ты решаешь сколько ты можешь заработать.
+                <h2 class="text-uppercase bg-yellow-md">Лучшие условия в городе</h2>
+                <h3 class="text-uppercase bg-yellow-md">Заполни анкету и приступай к работе</h3>
+                <p>Достойный заработок, где ты решаешь сколько ты можешь заработать.
                     Всегда чёткая и понятная зависимость вложенных усилий и количества полученных денег.
                     Никаких испытательных сроков и обучающих курсов — садишся за руль и начинаешь зарабатывать!
                     Все бумажные работы, договора и налоги берёт на себя перевозчик, тебе остаётся только возить людей и
@@ -177,10 +167,10 @@
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-12">
                                 <label for="form_comment" class="m-0">Комментарий к анкете</label>
-                                <textarea class="form-control" id="form_comment" rows="3" placeholder=""></textarea>
+                                <textarea class="form-control" id="form_comment" rows="3" placeholder="Если есть предпочтения по службам такси, укажи это в комментарии"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-secondary btn-block">Отправить анкету</button>
+                        <button type="submit" class="btn btn-lg btn-secondary btn-block rounded-0">Отправить анкету</button>
                     </fieldset>
                 </form>
                 <!-- конец: Форма заявки -->
@@ -188,55 +178,59 @@
         </div>
     </div>
     <!-- Карусель с доступными службами такси -->
-    <div class="container-fluid bg-white pb-5">
+    <div class="container-fluid bg-white pb-5" id="services">
         <div class="row flex-column align-items-center">
-            <h2 class="mt-5 mb-5 text-center">Доступные службы такси</h2>
+            <h2 class="mt-5 mb-5 text-center">Выбор службы такси за тобой</h2>
             <div class="container">
                 <!-- Слайдер со службами такси -->
                 <div class="carousel_taxi-services w-100 card-deck">
                     <div class="card border-0">
-                        <img src="assets/taxi1.png" class="card-img-top position-absolute p-3" alt="...">
-                        <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title pt-md-4-sm-1-5">"Столица" 135</h3>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-secondary">Подробнее ...</a>
+                        <img src="assets/logo/stolica.jpg" class="card-img-top" alt="stolica">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">Такси «Столица 135»</h3>-->
+                            <p class="card-text">Основана в 2002 году. Более 15 000 заказов в день. Лояльные пассажиры. Удобная программа приема заказов.<br><b>Минимальная поездка 4,50 BYN</b></p>
                         </div>
                     </div>
                     <div class="card border-0">
-                        <img src="assets/taxi2.png" class="card-img-top position-absolute p-3" alt="...">
-                        <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title pt-md-4-sm-1-5">"Командир" 7900</h3>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-secondary">Подробнее ...</a>
+                        <img src="assets/logo/almaz.jpg" class="card-img-top" alt="almaz">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">Такси «Алмаз 7788»</h3>-->
+                            <p class="card-text">Основана в 2010 году. Сервис широко разрекламирован на ведущих телеканалах, радиостанциях и билбордах.<br><b>Минимальная поездка 4,49 BYN</b></p>
                         </div>
                     </div>
                     <div class="card border-0">
-                        <img src="assets/taxi3.png" class="card-img-top position-absolute p-3" alt="...">
-                        <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title pt-md-4-sm-1-5">"Алмаз" 7788</h3>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-secondary">Подробнее ...</a>
+                        <img src="assets/logo/comandir.jpg" class="card-img-top" alt="comandir">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">Такси «Командир 7900»</h3>-->
+                            <p class="card-text">Основана в 2013 году. Уверено завоевала города-спутники, служба работает в Дзержинске, Фаниполе, Лиде, Столбцах и т.д. Удобное рабочее приложение.<br><b>Минимальная поездка 3,50 BYN</b></p>
                         </div>
                     </div>
                     <div class="card border-0">
-                        <img src="assets/taxi4.png" class="card-img-top position-absolute p-3" alt="...">
-                        <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title pt-md-4-sm-1-5">Яндекс.Такси</h3>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-secondary">Подробнее ...</a>
+                        <img src="assets/logo/yandex-taxi.jpg" class="card-img-top" alt="yandex-taxi">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">Яндекс.Такси</h3>-->
+                            <p class="card-text">Основана в 2011 году. Более 40 000 заказов в день. Самая динамично развиваемая служба. Разные уровни заказов от Эконома до Бизнеса.<br><b>Минимальная поездка 3,30 BYN</b></p>
                         </div>
                     </div>
                     <div class="card border-0">
-                        <img src="assets/taxi2.png" class="card-img-top position-absolute p-3" alt="...">
-                        <div class="card-body mt-6 bg-primary pt-md-7-sm-4 d-flex flex-column align-items-center">
-                            <h3 class="card-title pt-md-4-sm-1-5">Uber</h3>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-secondary">Подробнее ...</a>
+                        <img src="assets/logo/uber.jpg" class="card-img-top" alt="uber">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">Uber</h3>-->
+                            <p class="card-text">Основана в 2009 году. Компания работает более чем в 76 странах и 596 городах мира. С 2017 года Яндекс.Такси и Uber подписали соглашение об объединении бизнеса и сервисов по онлайн-заказу такси в России, Азербайджане, Армении, Белоруссии, Грузии и Казахстане.</p>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <img src="assets/logo/euro-taxi.jpg" class="card-img-top" alt="euro-taxi">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">EuroTaxi</h3>-->
+                            <p class="card-text">Основана в 2018 году и успешно набирает обороты. «ЕвроТакси» — это высокий уровень сервиса, безопасности и комфорта.<br><b>Минимальная поездка 4,50 BYN</b></p>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <img src="assets/logo/next-app.jpg" class="card-img-top" alt="next-app">
+                        <div class="card-body bg-primary d-flex flex-column align-items-center minh-232">
+                            <!--<h3 class="card-title pt-md-4-sm-1-5">NextApp</h3>-->
+                            <p class="card-text">Основана в 2015 году. Разные типы заказов стандарт, комфорт. Адекватные и интересные пассажиры.<br><b>Минимальная поездка 3,70 BYN</b></p>
                         </div>
                     </div>
                 </div>
@@ -253,39 +247,24 @@
                 <div class="col-md-6">
                     <ul class="list-unstyled">
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="taxi">
+                            <img width="150" height="150" src="assets/fontawesome/sticky-note-regular.svg" class="mr-3 col-md-3" alt="sticker">
                             <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">Бесплатная оклейка авто</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <p class="text-white">Наша компания не только поможет выбрать тип оклейки вашего автомобиля, но и полностью возместит ее стоимость.</p>
                             </div>
                         </li>
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <img width="150" height="150" src="assets/fontawesome/id-card-regular.svg" class="mr-3 col-md-3" alt="document">
                             <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">Официальное оформление</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <p class="text-white">Только в нашей компании вы получаете официальное трудоустройство и Декрет президента №1 вас не коснется. </p>
                             </div>
                         </li>
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <img width="150" height="150" src="assets/fontawesome/hands-helping-solid.svg" class="mr-3 col-md-3" alt="help">
                             <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">Помощь от опытных водителей</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <p class="text-white">В нашей компании работают опытные водители, которые круглосуточно помогут с форс-мажорной ситуацией. Вливайся в команду!</p>
                             </div>
                         </li>
                     </ul>
@@ -293,39 +272,24 @@
                 <div class="col-md-6">
                     <ul class="list-unstyled">
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <img width="150" height="150" src="assets/fontawesome/search-dollar-solid.svg" class="mr-3 col-md-3" alt="search-dollar">
                             <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">Выгодные условия</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <p class="text-white">Самые лучшие условия в городе. 50 % скидка на мойку вашего автомобиля. Никаких скрытых платежей и штрафов, все прозрачно и честно, мы ценим наших водителей. Наша компания является официальным партнером Яндекс.Такси, что обеспечивает минимальные комиссии.</p>
                             </div>
                         </li>
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <img width="150" height="150" src="assets/fontawesome/wallet-solid.svg" class="mr-3 col-md-3" alt="wallet">
                             <div class="media-body col-md-9">
                                 <h3 class="mt-0 mb-1 text-warning">Без дополнительных вложений</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <p class="text-white">Наша компания предоставляет все необходимое оборудование для работы в такси. С вашей стороны абсолютно никаких лишних вложений. Все затраты на себя берет компания.</p>
                             </div>
                         </li>
                         <li class="d-flex flex-wrap mb-5">
-                            <img width="150" height="150" src="/assets/taxi-solid.svg" class="mr-3 col-md-3" alt="...">
+                            <img width="150" height="150" src="assets/fontawesome/comments-dollar-solid.svg" class="mr-3 col-md-3" alt="comments-dollar">
                             <div class="media-body col-md-9">
-                                <h3 class="mt-0 mb-1 text-warning">List-based media object</h3>
-                                <p class="text-white">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                    scelerisque ante
-                                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                    Fusce
-                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
-                                    faucibus.</p>
+                                <h3 class="mt-0 mb-1 text-warning">Бонусы и акции</h3>
+                                <p class="text-white">В нашей компании предоставляется бонус в размере 50 рублей за приведенного друга. А так же много приятных выплат на значимые для вас даты. Так же каждые полгода проводится розыгрыш для водителей, призы вас приятно удивят.</p>
                             </div>
                         </li>
                     </ul>
@@ -347,24 +311,7 @@
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">Сколько можно заработать водителем в Минске?</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseEarnings" role="button"
-                                           aria-expanded="false" aria-controls="collapseEarnings">
-                                            открыть текст &#8690;
-                                        </a>
-                                    </small>
-                                </p>
-                                <div class="collapse" id="collapseEarnings">
-                                    <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                        anderson cred nesciunt sapiente ea proident.
-                                        <a href="https://taxi.yandex.ru/rabota/">см. вопросы тут</a>
-                                    </div>
-                                </div>
+                                <p class="card-text">Заработок водителем такси зависит сугубо от вас и ваших трудозатрат. Средний заработок в месяц составляет порядка 1500 рублей.</p>
                             </div>
                         </div>
                     </div>
@@ -377,24 +324,7 @@
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">Как считать и платить налоги?</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseTaxes" role="button"
-                                           aria-expanded="false" aria-controls="collapseTaxes">
-                                            открыть текст &#8690;
-                                        </a>
-                                    </small>
-                                </p>
-                                <div class="collapse" id="collapseTaxes">
-                                    <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                        anderson cred nesciunt sapiente ea proident.
-                                        <a href="https://konkordtaxi.com/">см. текст тут</a>
-                                    </div>
-                                </div>
+                                <p class="card-text">Вам не нужно думать об уплате налогов, все на себя берет наша компания. Все платежи фиксированы и не увеличиваются.</p>
                             </div>
                         </div>
                     </div>
@@ -407,23 +337,7 @@
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">Какой нужен автомобиль для работы в такси?</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseTaxi-car" role="button"
-                                           aria-expanded="false" aria-controls="collapseTaxi-car">
-                                            открыть текст &#8690;
-                                        </a>
-                                    </small>
-                                </p>
-                                <div class="collapse" id="collapseTaxi-car">
-                                    <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                        anderson cred nesciunt sapiente ea proident.
-                                    </div>
-                                </div>
+                                <p class="card-text">Требования к автомобилю просты: от 2000 года выпуска, хорошее состояние, 4 или 5 дверей. Машины старше 2000 года рассматриваются в индивидуальном порядке.</p>
                             </div>
                         </div>
                     </div>
@@ -436,23 +350,7 @@
                         <div class="col-md-9">
                             <div class="card-body">
                                 <h5 class="card-title">Как выбрать службу такси?</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">
-                                        <a class="" data-toggle="collapse" href="#collapseChoose-service" role="button"
-                                           aria-expanded="false" aria-controls="collapseChoose-service">
-                                            открыть текст &#8690;
-                                        </a>
-                                    </small>
-                                </p>
-                                <div class="collapse" id="collapseChoose-service">
-                                    <div class="card card-body border-0 p-0">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                        anderson cred nesciunt sapiente ea proident.
-                                    </div>
-                                </div>
+                                <p class="card-text">Если вы затрудняетесь с выбором службы такси, наши профессионалы вам помогут определится, исходя из ваших пожеланий.</p>
                             </div>
                         </div>
                     </div>
@@ -479,17 +377,8 @@
                                         свою давнюю мечту — стать водителем такси — Peugeot 406, способного развивать
                                         бешеную скорость. </p>
                                     <p class="card-text">
-                                        <small class="text-muted">
-                                            <a href="#" target="_blank"><img
-                                                    src="assets/vk-social-network-logo.svg" alt="vk"
-                                                    class="social-icon"></a>
-                                            <a href="#" target="_blank"><img
-                                                    src="assets/telegram.svg" alt="vk" class="social-icon"></a>
-                                            <a href="#" target="_blank"><img
-                                                    src="assets/instagram.svg" alt="vk" class="social-icon"></a>
-                                        </small>
+                                        <small class="text-muted">Сами Насери, "Такси"</small>
                                     </p>
-
                                 </div>
                             </div>
                         </div>
@@ -505,7 +394,7 @@
                                     <p class="card-text">Одинокий 26-летний мужчина, служил в морской пехоте. Страдая от
                                         хронической бессонницы, устраилс работать ночным таксистом в Нью-Йорке.</p>
                                     <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                        <small class="text-muted">Роберт Де Ниро, "Таксист"</small>
                                     </p>
                                 </div>
                             </div>
@@ -524,7 +413,7 @@
                                     <p class="card-text">Увяз в проблемах своей личной жизни и финансовых
                                         неурядицах.</p>
                                     <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                        <small class="text-muted">Брюс Уиллис, "Пятый элемент"</small>
                                     </p>
                                 </div>
                             </div>
@@ -541,7 +430,7 @@
                                     <p class="card-text">Лёлик под видом таксиста перехватывает Горбункова и везёт его
                                         якобы в Дубровку, куда тот собрался к жене и детям.</p>
                                     <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                        <small class="text-muted">Анатолий Папанов, "Бриллиантовая рука"</small>
                                     </p>
                                 </div>
                             </div>
@@ -558,7 +447,7 @@
                                     <p class="card-text">Не сильно ориентируюсь по городу. Поэтому мой первый вопрос к
                                         пассажирам будет: «Дорогу покажешь?»</p>
                                     <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                        <small class="text-muted">Анфиса Чехова в День такси</small>
                                     </p>
                                 </div>
                             </div>
@@ -574,10 +463,7 @@
             <div class="col-md-12">
                 <h2 class="mx-auto text-center mb-5 mt-5 text-dark">Присоединяйся к KJ-Group и получи лучшую поддержку в
                     новой работе!</h2>
-                <p class="text-center mb-5">Уже работаешь в другой службе такси, но хочешь поменять? Подключим тебя и ты
-                    куда пожелаешь. Далее выбор за тобой, работать на личном автомобиле или на автомобиле компании .
-                    Подключение производится дистанционно, не нужно никуда ехать, просто заполняй анкету и с тобой
-                    свяжутся.</p>
+                <p class="text-center mb-5">Уже работаешь в другой службе такси, но хочешь поменять? Подключим тебя куда пожелаешь. Далее выбор за тобой, работать на личном автомобиле или на автомобиле компании. Подключение производится дистанционно, просто заполняй анкету и с тобой свяжутся</p>
             </div>
             <button class="nav-link btn btn-secondary mx-auto scroll-to-form-btn mb-5" onclick="focusMethod()">
                 Заполнить анкету<span class="sr-only">(current)</span></button>
@@ -591,25 +477,25 @@
                 <h3 class="text-white">Кто такие KJ-Group</h3>
                 <div class="dropdown-divider border-warning"></div>
                 <small class="text-white">Водители в службах такси Минска оформленные у одного перевозчика</small><br>
-                <small class="text-white">ИП "Карпиков Евгений Олегович"</small><br>
-                <small class="text-white">Юр.адрес: 220036, Минская обл., Минский р-н, Новодворский с/с, д.40/2, помещение 40/1, район д.Большое Стиклево</small>
-                <small class="text-white">УНП 691825519 Свидетельство о регистрации выдано 19.01.2017 г. Минским горисполкомом</small>
-                <small class="text-white">Зарегистрирован в Торговом реестре 02.02.2017 г.</small>
+                <small class="text-white">ООО «КиДжей-групп» </small><br>
+                <small class="text-white">Юр и почт адрес: 220036, г. Минск, ул. Куприянова 1а, оф. 310.</small>
+                <small class="text-white">УНП 193263712</small>
+                <small class="text-white">Свидетельство о регистрации выдано 04.06.2019 года. Мингорисполкомом.</small>
             </div>
             <div class="col-md-6" id="contacts">
                 <h3 class="text-white">Контакты</h3>
                 <div class="dropdown-divider border-warning"></div>
-                <small class="text-white">Звони: <a class="text-white" href="tel:+375293917716"> +375 29 391-77-16 </a></small><br>
+                <small class="text-white">Звони: <a class="text-white" href="tel:+375293917716"> +375 29 391-77-16 </a></small> <img src="assets/telegram.svg" alt="Telegram" class="social-icon"><img src="assets/viber-brands.svg" alt="Viber" class="social-icon"><img src="assets/whatsapp-brands.svg" alt="WhatsApp" class="social-icon"><br>
                 <small class="text-white">Присоединяйся к нам в социальных сетях и будь в курсе новостей:</small>
                 <ul class="list-group list-group-flush list-unstyled">
                     <li class="text-decoration-none">
-                        <a href="#" target="_blank" class="text-white"><img src="assets/vk-social-network-logo.svg" alt="vk" class="social-icon"> vk.com/kj-group</a>
+                        <a href="https://vk.com/kjgroup" target="_blank" class="text-white"><img src="assets/vk-social-network-logo.svg" alt="vk" class="social-icon"> vk.com/kjgroup</a>
                     </li>
                     <li >
-                        <a href="#" target="_blank" class="text-white"><img src="assets/telegram.svg" alt="vk" class="social-icon"> t.me/kj-group</a>
+                        <a href="https://web.facebook.com/kj.group.taxi" target="_blank" class="text-white"><img src="assets/facebook-square-brands.svg" alt="facebook" class="social-icon"> facebook.com/kj.group.taxi</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" class="text-white"><img src="assets/instagram.svg" alt="vk" class="social-icon"> @kj-group</a>
+                        <a href="https://www.instagram.com/kj.group_taxi/" target="_blank" class="text-white"><img src="assets/instagram.svg" alt="instagram" class="social-icon"> @kj.group_tax</a>
                     </li>
                 </ul>
             </div>

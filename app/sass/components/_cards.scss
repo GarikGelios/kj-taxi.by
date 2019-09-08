@@ -11,3 +11,11 @@
 .slick-prev:before, .slick-next:before {
   color: $black-color;
 }
+.minh-232{
+  min-height: 232px;
+}
+.card-text {
+  @include media-breakpoint-down(sm) {
+    font-size: .8rem;
+  }
+}

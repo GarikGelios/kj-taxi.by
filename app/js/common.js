@@ -105,3 +105,16 @@ function handleButtonClick3() {
     });
 }
 scroll_btn3.addEventListener('click', handleButtonClick3);
+
+//Scroll to services
+var scroll_btn4 = document.querySelector('.scroll-to-services-btn');
+const form_services = document.getElementById('services');
+const y_coordinate_services = form_services.getBoundingClientRect().top + window.pageYOffset;
+const yOffset4 = -50;
+function handleButtonClick4() {
+    window.scrollTo({
+        top: y_coordinate_services + yOffset4,
+        behavior: 'smooth'
+    });
+}
+scroll_btn4.addEventListener('click', handleButtonClick4);
