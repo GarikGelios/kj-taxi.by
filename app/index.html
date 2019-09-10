@@ -88,36 +88,33 @@
             </div>
             <div class="col-md-6">
                 <!-- начало: Форма заявки -->
-                <form class="bg-white mb-5" id="form_profile"
-                      oninput="formExperience.value=parseInt(form_experience.value)">
+                <form class="bg-white mb-5" id="form_profile" oninput="formExperience.value=parseInt(form_experience.value)">
                     <fieldset class="">
                         <legend class="bg-dark text-white p-3">Анкета водителя</legend>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">Имя</label>
-                                <input type="text" class="form-control" id="form_name" placeholder="Jason" required>
+                                <input type="text" class="form-control" id="form_name" placeholder="Jason" name="name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_surname" class="m-0">Фамилия</label>
-                                <input type="text" class="form-control" id="form_surname" placeholder="Statham"
-                                       required>
+                                <input type="text" class="form-control" id="form_surname" placeholder="Statham" name="surname" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_middlename" class="m-0">Отчество</label>
-                                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich">
+                                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich" name="middlename">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_birthday" class="m-0">Дата рождения</label>
-                                <input type="date" class="form-control" id="form_birthday" value="1967-07-26"
-                                       min="1960-01-01" max="2007-12-31" required>
+                                <input type="date" class="form-control" id="form_birthday" value="1967-07-26" name="birthday" min="1960-01-01" max="2007-12-31" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_region" class="m-0">Место проживания</label>
-                                <select id="form_region" class="form-control">
+                                <select id="form_region" class="form-control" name="region">
                                     <option selected>Минская обл.</option>
                                     <option>Витебская обл.</option>
                                     <option>Могилёвская обл.</option>
@@ -128,46 +125,40 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_locality" class="m-0">город/поселок</label>
-                                <input type="text" class="form-control" id="form_locality"
-                                       placeholder="д. Великая Борздынь" required>
+                                <input type="text" class="form-control" id="form_locality" placeholder="д. Великая Борздынь" name="locality" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-12">
                                 <label for="form_experience" class="m-0">Стаж вождения, полных лет :</label>
                                 <output class="font-weight-bold" name="formExperience" for="form_experience">5</output>
-                                <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience"
-                                       value="5">
+                                <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience" value="5" name="experience">
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_carbrand" class="m-0">Марка и модель автомобиля</label>
-                                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12"
-                                       required>
+                                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12" name="carbrand" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_caryear" class="m-0">год выпуска</label>
-                                <input type="number" class="form-control" id="form_caryear" min="2010" step="1"
-                                       required>
+                                <input type="number" class="form-control" id="form_caryear" min="2010" step="1" name="caryear" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">email</label>
-                                <input type="email" class="form-control" id="form_email"
-                                       placeholder="transporter@kj-group.com">
+                                <input type="email" class="form-control" id="form_email" placeholder="transporter@kj-group.com" name="email">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_surname" class="m-0">телефон</label>
-                                <input type="number" class="form-control" id="form_phone"
-                                       placeholder="+375 29 391-77-16" required>
+                                <input type="number" class="form-control" id="form_phone" placeholder="+375 29 391-77-16" name="phone" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-12">
                                 <label for="form_comment" class="m-0">Комментарий к анкете</label>
-                                <textarea class="form-control" id="form_comment" rows="3" placeholder="Если есть предпочтения по службам такси, укажи это в комментарии"></textarea>
+                                <textarea class="form-control" id="form_comment" rows="3" placeholder="Если есть предпочтения по службам такси, укажи это в комментарии" name="comment"></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-lg btn-secondary btn-block rounded-0">Отправить анкету</button>
