@@ -1,32 +1,30 @@
 'use strict'
-require('dotenv').config();
+const express = require(`express`);
+const bodyParser = require('body-parser')
 
-const nodemailer = require('nodemailer');
+const app = express();
 
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true, // use SSL
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
-        }
-    });
+const PORT = 3001;
 
-    // send mail with defined transport object
-    let mailOptions = {
-        from: 'kjgrouptaxi@gmail.com', // sender address
-        to: 'kjgrouptaxi@gmail.com, garikgelios@gmail.com', // list of receivers
-        subject: 'Test application from the site', // Subject line
-        text: 'Hello world?', // plain text body
-    };
+app.use('/css', express.static(__dirname + `/app/css/`));
+app.use('/assets', express.static(__dirname + `/app/assets/`));
+app.use('/js', express.static(__dirname + `/app/js/`));
 
-    transporter.sendMail(mailOptions, function(err, data) {
-        if (err) {
-            console.log(`Error Occurs`, err);
-        } else {
-            console.log(`Email sent!!!`);
-        }
-    });
+app.use(bodyParser.urlencoded({ extend: false }));
 
+var user;
+
+app.post(``, (req, res) =>{
+    if(!req.body.name || !req.body.surname) return res.sendStatus(400);
+    console.log(req.body);
+    user = req.body;
+    res.redirect(`/`);
+});
+
+
+app.get(``, (req, res) => {
+    if(typeof user !== `object`) return res.sendFile(__dirname + `/app/index.html`);
+    res.send(`Данные отправлены для: ${user.email}`);
+    user = undefined;
+});
+app.listen(PORT, () => console.log(`server listening at http://localhost:3001`));
