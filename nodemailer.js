@@ -22,21 +22,3 @@ const mailer = message => {
 };
 
 module.exports = mailer;
-
-// // send mail with defined transport object
-// let mailOptions = {
-//     from: 'kjgrouptaxi@gmail.com', // sender address
-//     to: 'kjgrouptaxi@gmail.com, garikgelios@gmail.com', // list of receivers
-//     subject: 'Test application from the site', // Subject line
-//     text: 'Hello world?', // plain text body
-//     html: `req.body.name`;
-// };
-//
-// transporter.sendMail(mailOptions, function(err, data) {
-//     if (err) {
-//         console.log(`Error Occurs`, err);
-//     } else {
-//         console.log(`Email sent!!!`);
-//     }
-// });
-
