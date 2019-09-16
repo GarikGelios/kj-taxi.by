@@ -1,6 +1,7 @@
 'use strict'
 const express = require(`express`);
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const mailer = require(`./nodemailer`);
 
 const app = express();
 
@@ -16,7 +17,38 @@ var user;
 
 app.post(``, (req, res) =>{
     if(!req.body.name || !req.body.surname) return res.sendStatus(400);
-    console.log(req.body);
+    console.log(req.body.name);
+    const message = {
+    from: 'KJ-taxi.by <kjgrouptaxi@gmail.com>', // sender address
+    to: `kjgrouptaxi@gmail.com, garikgelios@gmail.com`, // list of receivers
+    subject: 'New driver registration', // Subject line
+    html: `<table style="max-width:580px">
+<tr>
+    <td>${req.body.name}</td>
+    <td>${req.body.surname}</td>
+    <td>${req.body.middlename}</td>
+</tr>
+<tr>
+    <td>${req.body.birthday}</td>
+    <td>${req.body.region}</td>
+    <td>${req.body.locality}</td>
+</tr>
+<tr>
+    <td>Опыт: ${req.body.experience} лет</td>
+    <td>${req.body.carbrand}</td>
+    <td>${req.body.caryear} года</td>
+</tr>
+<tr>
+    <td colspan="2">${req.body.email}</td>
+    <td>${req.body.phone}</td>
+</tr>
+<tr>
+    <td colspan="3">${req.body.comment}</td>
+</tr>
+</table>` // plain text body
+
+    };
+    mailer(message);
     user = req.body;
     res.redirect(`/`);
 });
