@@ -58,4 +58,4 @@ app.post(``, (req, res) =>{
     res.render('success', {data: req.body});
 });
 
-app.listen(PORT, () => console.log(`server listening at http://kj-taxi.in-dev.work:3000/`));
+app.listen('http://kj-taxi.in-dev.work', () => console.log(`server listening at http://kj-taxi.in-dev.work/`));
