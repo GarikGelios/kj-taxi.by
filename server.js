@@ -5,7 +5,7 @@ const mailer = require(`./nodemailer`);
 
 const app = express();
 
-const PORT = 3001;
+const PORT = 3000;
 
 app.use('/css', express.static(__dirname + `/app/css/`));
 app.use('/assets', express.static(__dirname + `/app/assets/`));
@@ -58,4 +58,4 @@ app.post(``, (req, res) =>{
     res.render('success', {data: req.body});
 });
 
-app.listen(PORT, () => console.log(`server listening at http://localhost:3001`));
+app.listen(PORT, () => console.log(`server listening at http://localhost:3000`));
