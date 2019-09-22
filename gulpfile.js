@@ -4,7 +4,6 @@
 //npm i gulp-sass --save-dev
 //npm i browser-sync --save-dev
 //npm i gulp-autoprefixer --save-dev
-//npm i gulp-inline-css --save-dev 
 
 var gulp         = require('gulp'), // Подключаем Gulp
     sass         = require('gulp-sass'), //Подключаем Sass пакет,

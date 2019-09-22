@@ -11,16 +11,21 @@ app.use('/css', express.static(__dirname + `/app/css/`));
 app.use('/assets', express.static(__dirname + `/app/assets/`));
 app.use('/js', express.static(__dirname + `/app/js/`));
 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(bodyParser.urlencoded({ extend: false }));
+var user_date;
 
-var user;
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res){
+    res.render('index');
+});
 
 app.post(``, (req, res) =>{
-    if(!req.body.name || !req.body.surname) return res.sendStatus(400);
-    console.log(req.body.name);
     const message = {
     from: 'KJ-taxi.by <kjgrouptaxi@gmail.com>', // sender address
-    to: `kjgrouptaxi@gmail.com, garikgelios@gmail.com`, // list of receivers
+    to: `kjgrouptaxi@gmail.com`, // list of receivers
     subject: 'New driver registration', // Subject line
     html: `<table style="max-width:580px">
 <tr>
@@ -45,18 +50,12 @@ app.post(``, (req, res) =>{
 <tr>
     <td colspan="3">${req.body.comment}</td>
 </tr>
-</table>` // plain text body
+</table>`
 
     };
     mailer(message);
-    user = req.body;
-    res.redirect(`/`);
+    user_date = req.body;
+    res.render('success', {data: req.body});
 });
 
-
-app.get(``, (req, res) => {
-    if(typeof user !== `object`) return res.sendFile(__dirname + `/app/index.html`);
-    res.send(`Данные отправлены для: ${user.email}`);
-    user = undefined;
-});
 app.listen(PORT, () => console.log(`server listening at http://localhost:3001`));
