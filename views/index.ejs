@@ -26,42 +26,7 @@
 </head>
 <body class="d-flex flex-column flex-nowrap m-0">
 <main class="flex-shrink-0">
-    <nav class="navbar navbar-expand-md fixed-top bg-dark-op">
-        <a class="navbar-brand font-weight-bold text-white" href="#">
-            <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
-            KJ-GROUP
-        </a>
-        <button class="nav-link btn btn-primary rounded-pill mx-auto scroll-to-form-btn" onclick="focusMethod()">
-            Заполнить анкету<span class="sr-only">(current)</span></button>
-        <div class="navbar-toggler" role="tree" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="burger_menu burger_cross burger_menu--1">
-                         <!-- https://codepen.io/Zaku/pen/ejLNJL -->
-                         <label class="burger_label">
-                             <input type="checkbox" class="burger_input">
-                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                 <circle cx="50" cy="50" r="30"/>
-                                 <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35"/>
-                                 <path class="line--2" d="M0 50h70"/>
-                                 <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65"/>
-                             </svg>
-                         </label>
-                     </span>
-        </div>
-        <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav col-xl-12 justify-content-between">
-                <li class="nav-item">
-                    <button class="nav-link btn btn-link text-white scroll-to-services-btn" tabindex="-1" aria-disabled="true">Службы такси</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link btn btn-link text-white scroll-to-conditions-btn" tabindex="-1" aria-disabled="true">Условия перевозчика</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link btn btn-link text-white scroll-to-contacts-btn" tabindex="-1" aria-disabled="true">Контакты</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <% include blocks/header.ejs %>
     <!-- Главный экран -->
     <div class="container-fluid screen-first">
         <!--<div class="fade-img position-absolute w-100"></div>-->
@@ -88,36 +53,33 @@
             </div>
             <div class="col-md-6">
                 <!-- начало: Форма заявки -->
-                <form class="bg-white mb-5" id="form_profile"
-                      oninput="formExperience.value=parseInt(form_experience.value)">
+                <form class="bg-white mb-5" id="form_profile" oninput="formExperience.value=parseInt(form_experience.value)" method="POST" action="http://kj-taxi.in-dev.work:3000">
                     <fieldset class="">
                         <legend class="bg-dark text-white p-3">Анкета водителя</legend>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">Имя</label>
-                                <input type="text" class="form-control" id="form_name" placeholder="Jason" required>
+                                <input type="text" class="form-control" id="form_name" placeholder="Jason" name="name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_surname" class="m-0">Фамилия</label>
-                                <input type="text" class="form-control" id="form_surname" placeholder="Statham"
-                                       required>
+                                <input type="text" class="form-control" id="form_surname" placeholder="Statham" name="surname" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_middlename" class="m-0">Отчество</label>
-                                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich">
+                                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich" name="middlename">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_birthday" class="m-0">Дата рождения</label>
-                                <input type="date" class="form-control" id="form_birthday" value="1967-07-26"
-                                       min="1960-01-01" max="2007-12-31" required>
+                                <input type="date" class="form-control" id="form_birthday" value="1967-07-26" name="birthday" min="1960-01-01" max="2007-12-31" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_region" class="m-0">Место проживания</label>
-                                <select id="form_region" class="form-control">
+                                <select id="form_region" class="form-control" name="region">
                                     <option selected>Минская обл.</option>
                                     <option>Витебская обл.</option>
                                     <option>Могилёвская обл.</option>
@@ -128,46 +90,40 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_locality" class="m-0">город/поселок</label>
-                                <input type="text" class="form-control" id="form_locality"
-                                       placeholder="д. Великая Борздынь" required>
+                                <input type="text" class="form-control" id="form_locality" placeholder="д. Великая Борздынь" name="locality" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-12">
                                 <label for="form_experience" class="m-0">Стаж вождения, полных лет :</label>
                                 <output class="font-weight-bold" name="formExperience" for="form_experience">5</output>
-                                <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience"
-                                       value="5">
+                                <input type="range" class="custom-range" min="1" max="10" step="1" id="form_experience" value="5" name="experience">
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_carbrand" class="m-0">Марка и модель автомобиля</label>
-                                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12"
-                                       required>
+                                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12" name="carbrand" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_caryear" class="m-0">год выпуска</label>
-                                <input type="number" class="form-control" id="form_caryear" min="2010" step="1"
-                                       required>
+                                <input type="number" class="form-control" id="form_caryear" min="2010" step="1" name="caryear" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-6">
                                 <label for="form_name" class="m-0">email</label>
-                                <input type="email" class="form-control" id="form_email"
-                                       placeholder="transporter@kj-group.com">
+                                <input type="email" class="form-control" id="form_email" placeholder="transporter@kj-group.com" name="email">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="form_surname" class="m-0">телефон</label>
-                                <input type="number" class="form-control" id="form_phone"
-                                       placeholder="+375 29 391-77-16" required>
+                                <input type="number" class="form-control" id="form_phone" placeholder="+375 29 391-77-16" name="phone" required>
                             </div>
                         </div>
                         <div class="form-row pl-3 pr-3">
                             <div class="form-group col-md-12">
                                 <label for="form_comment" class="m-0">Комментарий к анкете</label>
-                                <textarea class="form-control" id="form_comment" rows="3" placeholder="Если есть предпочтения по службам такси, укажи это в комментарии"></textarea>
+                                <textarea class="form-control" id="form_comment" rows="3" placeholder="Если есть предпочтения по службам такси, укажи это в комментарии" name="comment"></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-lg btn-secondary btn-block rounded-0">Отправить анкету</button>

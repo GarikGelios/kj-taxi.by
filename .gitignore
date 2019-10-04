@@ -1,3 +1,4 @@
 #Исключим директории:
 /node_modules/*
 .idea/
+.env

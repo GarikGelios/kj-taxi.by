@@ -1,34 +1,32 @@
 {
-  "name": "projectarchetype",
+  "name": "kj-taxi.by",
   "version": "1.0.0",
-  "description": "the basic architecture of the project in the GULP build",
-  "main": "gulpfile.js",
+  "description": "Webapp KJ-taxi on Node.js express and Bootstrap ",
+  "main": "server.js",
   "scripts": {
-    "test": "garikTest"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GarikGelios/ProjectArchetype.git"
+    "url": "git+https://github.com/GarikGelios/kj-taxi.by.git"
   },
-  "keywords": [
-    "html",
-    "css",
-    "scss",
-    "sass",
-    "js",
-    "gulp"
-  ],
   "author": "GarikGelios",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GarikGelios/ProjectArchetype/issues"
+    "url": "https://github.com/GarikGelios/kj-taxi.by/issues"
   },
-  "homepage": "https://github.com/GarikGelios/ProjectArchetype#readme",
+  "homepage": "https://github.com/GarikGelios/kj-taxi.by#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.0"
+  },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-inline-css": "^3.3.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
     "gulp-sass": "^4.0.2"
   }
 }
