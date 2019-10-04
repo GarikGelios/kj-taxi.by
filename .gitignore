@@ -1,5 +1,7 @@
 #Исключим директории:
 /node_modules/*
 .idea/
+tmp/
 .env
 .htaccess
+node_modules
