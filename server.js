@@ -2,7 +2,6 @@
 const express = require(`express`);
 const bodyParser = require('body-parser');
 const mailer = require(`./nodemailer`);
-const secretKey = '6LfTELwUAAAAALzWsbPhXAd3fVrNrNCJZGhVAh4v';
 const app = express();
 
 const PORT = 3000;
@@ -56,30 +55,6 @@ app.post(``, (req, res) =>{
     mailer(message);
     user_date = req.body;
     res.render('success', {data: req.body});
-});
-
-app.post('/verify',(req,res) =>{
-
-    if(!req.body.captcha){
-        res.json({'msg':'captcha token is undefined'});
-    }
-
-    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`;
-
-    request(verifyUrl, (err, response, body)=>{
-
-        if(err){
-            console.log(err);
-        }
-
-        if(!body.success || body.score < 0.4){
-            return res.json({'msg':'You might be a robot, sorry! You are banned!', 'score':body.score})
-        }
-
-        return res.json({'msg':'You have been verifed! You may proceed!', 'score':body.score})
-
-    });
-
 });
 
 app.listen(PORT, () => console.log(`server listening at http://localhost:3000/`));
