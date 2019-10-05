@@ -65,13 +65,13 @@ app.post('/subscribe', (req, res) =>{
         req.body.captcha === '' ||
         req.body.captcha === null
     ){
-        return res.json({'success': false, "msg":"Please select the captcha"});
-
+        return res.json({'success': false, "msg":"Поставьте галочку над кнопкой отправить, чтобы убедиться, что вы не робот."});
+    };
         //Secret key
         const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
 
         //Verify URL
-        const verifyUrl =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
 
         //Make Request To Verify
         request(verifyUrl, (err, response, body) =>{
