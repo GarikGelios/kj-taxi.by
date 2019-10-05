@@ -65,7 +65,7 @@ app.post('/subscribe', (req, res) =>{
         req.body.captcha === '' ||
         req.body.captcha === null
     ){
-        return res.json({'success': false, "msg":"Поставьте галочку над кнопкой отправить, чтобы убедиться, что вы не робот."});
+        return res.json({'success': false, "msg":"Check the captcha please if you are not the robot."});
     };
         //Secret key
         const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
