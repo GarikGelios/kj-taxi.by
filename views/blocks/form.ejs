@@ -5,12 +5,12 @@
         <legend class="bg-dark text-white p-3">Анкета водителя</legend>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-6">
-                <label for="form_name" class="m-0">Имя</label>
-                <input type="text" class="form-control" id="form_name" placeholder="Jason" name="name" required>
+                <label for="form-name" class="m-0">Имя</label>
+                <input type="text" class="form-control" id="form-name" placeholder="Jason" name="name" required>
             </div>
             <div class="form-group col-md-6">
-                <label for="form_surname" class="m-0">Фамилия</label>
-                <input type="text" class="form-control" id="form_surname" placeholder="Statham" name="surname" required>
+                <label for="form-surname" class="m-0">Фамилия</label>
+                <input type="text" class="form-control" id="form-surname" placeholder="Statham" name="surname" required>
             </div>
         </div>
         <div class="form-row pl-3 pr-3">
@@ -85,19 +85,50 @@
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-12">
                 <!-- reCAPTCHA -->
-                <script type="text/javascript">
-                    var onloadCallback = function () {
-                        grecaptcha.render('recaptcha-checkbox', {
-                            'sitekey': '6Lf9D7wUAAAAAKUKYoeojcTzSDxY3BxN67l2SHnK'
-                        });
-                    };
+                <script
+                    src="https://www.google.com/recaptcha/api.js?render=6LfTELwUAAAAANP9-BZO5mbEE5rykZPg5yGmXiXe"></script>
+
                 </script>
-                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
-                </script>
-                <div id="recaptcha-checkbox"></div>
             </div>
         </div>
         <button type="submit" class="btn btn-lg btn-secondary btn-block rounded-0">Отправить анкету</button>
     </fieldset>
 </form>
+<script>
+    document.getElementById('form_profile').addEventListener('submit', runVerify);
+
+    function runVerify(e) {
+        e.preventDefault();
+        runCaptcha();
+    }
+
+    function runCaptcha() {
+        grecaptcha.execute('6LfTELwUAAAAANP9-BZO5mbEE5rykZPg5yGmXiXe', { action: 'homepage' }).then(function (token) {
+            const name = document.querySelector(`#form-name`);
+            console.log(name);
+            const surname = document.querySelector(`#form-surname`);
+            console.log(surname);
+            const captcha = token;
+            console.log(captcha);
+
+            sendData(name, surname, captcha);
+        });
+
+    };
+
+    function sendData(name, surname, captcha){
+        const info = JSON.stringify({name:name, surname:surname, captcha:captcha});
+
+        fetch('/verify',{
+            method:'POST',
+            heders: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json'
+            },
+            body: info
+        }).then((res)=> res.json()).then((data)=>{
+            alert('msg: ' + data.msg + ', score' + data.score);
+        })
+    }
+</script>
 <!-- конец: Форма заявки -->
