@@ -39,7 +39,7 @@ $(document).ready(function(){
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 768,
