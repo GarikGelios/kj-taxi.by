@@ -95,25 +95,24 @@
 <script>
     document.getElementById('form_profile').addEventListener('submit', submitForm);
 
-    function submitForm(e){
-        e.preventDefault(){
-            const name = document.querySelector('#form-name').value;
-            const surname = document.querySelector('#form-surname').value;
-            const captcha = document.querySelector('#g-recaptcha-response').value;
+    function submitForm(e) {
+        e.preventDefault();
+        const name = document.querySelector('#form-name').value;
+        const surname = document.querySelector('#form-surname').value;
+        const captcha = document.querySelector('#g-recaptcha-response').value;
 
-            fetch('/subscribe', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-type': 'application/json'
-                },
-                body:JSON.stringify({name:name, surname:surname, captcha:captcha})
-            })
+        fetch('/subscribe', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ name: name, surname: surname, captcha: captcha })
+        })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-            })
-        }
-    }
+            });
+    }    
 </script>
 <!-- конец: Форма заявки -->
