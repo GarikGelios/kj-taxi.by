@@ -71,7 +71,7 @@ app.post('/subscribe', (req, res) =>{
         const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
 
         //Verify URL
-        const verifyUrl =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&reponse=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+        const verifyUrl =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
 
         //Make Request To Verify
         request(verifyUrl, (err, response, body) =>{
