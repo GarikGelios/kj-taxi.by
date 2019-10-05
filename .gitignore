@@ -4,4 +4,5 @@
 tmp/
 .env
 .htaccess
+access.md
 node_modules
