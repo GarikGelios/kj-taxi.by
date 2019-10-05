@@ -15,6 +15,7 @@ app.use('/js', express.static(__dirname + `/app/js/`));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(bodyParser.urlencoded({ extend: false }));
+app.use(bodyParser.json());
 var user_date;
 
 app.set('view engine', 'ejs');
