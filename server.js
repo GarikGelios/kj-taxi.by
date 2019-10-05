@@ -2,6 +2,7 @@
 const express = require(`express`);
 const bodyParser = require('body-parser');
 const mailer = require(`./nodemailer`);
+const request = require(`request`);
 const secretKey = '6LfTELwUAAAAALzWsbPhXAd3fVrNrNCJZGhVAh4v';
 const app = express();
 
