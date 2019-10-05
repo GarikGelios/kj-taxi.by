@@ -2,6 +2,7 @@
 const express = require(`express`);
 const bodyParser = require('body-parser');
 const mailer = require(`./nodemailer`);
+const request = require(`request`);
 const app = express();
 
 const PORT = 3000;
@@ -13,6 +14,7 @@ app.use('/js', express.static(__dirname + `/app/js/`));
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(bodyParser.urlencoded({ extend: false }));
+app.use(bodyParser.json());
 var user_date;
 
 app.set('view engine', 'ejs');
@@ -55,6 +57,35 @@ app.post(``, (req, res) =>{
     mailer(message);
     user_date = req.body;
     res.render('success', {data: req.body});
+});
+
+app.post('/subscribe', (req, res) =>{
+    if(
+        req.body.captcha === undefined ||
+        req.body.captcha === '' ||
+        req.body.captcha === null
+    ){
+        return res.json({'success': false, "msg":"Please select the captcha"});
+
+        //Secret key
+        const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
+
+        //Verify URL
+        const verifyUrl =`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&reponse=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+
+        //Make Request To Verify
+        request(verifyUrl, (err, response, body) =>{
+            body = JSON.parse(body);
+
+            //If no successful
+            if(body.success !== undefined && !body.success){
+                return res.json({'success': false, "msg":"Failed captcha verification"});
+            }
+
+            //If successful
+            return res.json({'success': false, "msg":"Capctcha passed"});
+        });
+    }
 });
 
 app.listen(PORT, () => console.log(`server listening at http://localhost:3000/`));
