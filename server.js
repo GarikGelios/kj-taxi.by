@@ -59,7 +59,7 @@ app.post(``, (req, res) =>{
     res.render('success', {data: req.body});
 });
 
-app.post('/subscribe', (req, res) =>{
+app.post('', (req, res) =>{
     if(
         req.body.captcha === undefined ||
         req.body.captcha === '' ||
@@ -84,6 +84,8 @@ app.post('/subscribe', (req, res) =>{
 
             //If successful
             return res.json({'success': false, "msg":"Capctcha passed"});
+            
+            
         });
     }
 });
