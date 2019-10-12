@@ -3,11 +3,13 @@
 .idea/
 tmp/
 app/buildcss/
+
 # файлы
 .env
 .htaccess
 access.md
 node_modules
+css/style.css
 index.html
 # исключить лишние файлы bootstrap css - всё есть в одном style.css
 bootstrap-grid.css

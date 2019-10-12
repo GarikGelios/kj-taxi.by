@@ -2126,6 +2126,28 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-warning hr {
+  border-top-color: #ffe8a1;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -3312,4 +3334,12 @@ circle {
   .card-text {
     font-size: .8rem;
   }
+}
+
+.alert-warning {
+  color: #000000;
+  background-color: #F7C119;
+  border-color: #F7C119;
+  z-index: 10000;
+  border-radius: 0;
 }
