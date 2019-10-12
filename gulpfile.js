@@ -5,22 +5,24 @@
 //npm i browser-sync --save-dev
 //npm i gulp-autoprefixer --save-dev
 
-var gulp         = require('gulp'), // Подключаем Gulp
-    sass         = require('gulp-sass'), //Подключаем Sass пакет,
-    browserSync  = require('browser-sync'), // Подключаем Browser Sync
-    autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
-    concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify      = require('gulp-uglifyjs'); // Подключаем gulp-uglifyjs (для сжатия JS)
+var gulp = require('gulp'), // Подключаем Gulp
+    sass = require('gulp-sass'), //Подключаем Sass пакет,
+    browserSync = require('browser-sync'), // Подключаем Browser Sync
+    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
+    concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+    uglify = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
+    rename = require('gulp-rename'), // Переименование новых изменённых файлов
+    purgecss = require('gulp-purgecss'); // Будем уюирать лишний css
 
-gulp.task('sass', function(){ // Создаем таск Sass
+gulp.task('sass', function () { // Создаем таск Sass
     return gulp.src('app/sass/**/*.scss') // Берем источник
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+        .pipe(browserSync.reload({ stream: true })) // Обновляем CSS на странице при изменении
 });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
+gulp.task('browser-sync', function () { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
         server: { // Определяем параметры сервера
             baseDir: 'app' // Директория для сервера - app
@@ -29,24 +31,32 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
     });
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/**/*.js', // Собираем кастомный js код и библиотеки
         'node_modules/bootstrap/dist/js/*.js', // Собираем js для bootstrap установленного с npm
-        ])
+    ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
         .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
 });
 
-gulp.task('code', function() {
+gulp.task('purgecss', () => {
+    return gulp.src('app/css/style.css')
+        .pipe(purgecss({
+            content: ['app/css/*.html', 'app/js/*.js' ]
+        }))
+        .pipe(gulp.dest('app/buildcss'))
+});
+
+gulp.task('code', function () {
     return gulp.src('app/*.html')
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch('app/sass/**/*.{sass,scss}', gulp.parallel('sass')); // Наблюдение за sass файлами
     gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/libs/**/*.js', gulp.parallel('scripts')); // Наблюдение за JS библиотеками
 });
-gulp.task('default', gulp.parallel('sass', 'scripts', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('sass', 'scripts', 'purgecss', 'browser-sync', 'watch'));
