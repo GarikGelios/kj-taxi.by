@@ -9,6 +9,8 @@ var gulp         = require('gulp'), // Подключаем Gulp
     sass         = require('gulp-sass'), //Подключаем Sass пакет,
     browserSync  = require('browser-sync'), // Подключаем Browser Sync
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
+    concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+    uglify      = require('gulp-uglifyjs'); // Подключаем gulp-uglifyjs (для сжатия JS)
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/**/*.scss') // Берем источник
@@ -28,8 +30,13 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 });
 
 gulp.task('scripts', function() {
-    return gulp.src(['app/js/common.js', 'app/libs/**/*.js']) //путь для слежения, где лежат js файлы
-        .pipe(browserSync.reload({ stream: true }))
+    return gulp.src([ // Берем все необходимые библиотеки
+        'app/libs/**/*.js', // Собираем кастомный js код и библиотеки
+        'node_modules/bootstrap/dist/js/*.js', // Собираем js для bootstrap установленного с npm
+        ])
+        .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
+        .pipe(uglify()) // Сжимаем JS файл
+        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
 });
 
 gulp.task('code', function() {
@@ -40,6 +47,6 @@ gulp.task('code', function() {
 gulp.task('watch', function() {
     gulp.watch('app/sass/**/*.{sass,scss}', gulp.parallel('sass')); // Наблюдение за sass файлами
     gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом и за библиотеками
+    gulp.watch('app/libs/**/*.js', gulp.parallel('scripts')); // Наблюдение за JS библиотеками
 });
-gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('sass', 'scripts', 'browser-sync', 'watch'));
