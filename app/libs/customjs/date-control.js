@@ -16,11 +16,11 @@ if(mm<10){
 today = yyyy+'-'+mm+'-'+dd;
 //машина не должна быть старше 10 лет
 var tenYearAgo = yyyy - 10;
-document.getElementById("form_caryear").setAttribute("min", tenYearAgo);
-document.getElementById("form_caryear").setAttribute("max", yyyy);
-document.getElementById("form_caryear").setAttribute("value", yyyy);
+document.getElementById("form-caryear").setAttribute("min", tenYearAgo);
+document.getElementById("form-caryear").setAttribute("max", yyyy);
+document.getElementById("form-caryear").setAttribute("value", yyyy);
 //водителю не должно быть менше 18 или больше 60
 var eighteenYearAgo = (yyyy - 18) +'-'+mm+'-'+dd;
 var sixteenYearAgo = (yyyy - 60) +'-'+mm+'-'+dd;
-document.getElementById("form_birthday").setAttribute("min", sixteenYearAgo);
-document.getElementById("form_birthday").setAttribute("max", eighteenYearAgo);
+document.getElementById("form-birthday").setAttribute("min", sixteenYearAgo);
+document.getElementById("form-birthday").setAttribute("max", eighteenYearAgo);

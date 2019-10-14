@@ -1,5 +1,5 @@
 <!-- начало: Форма заявки -->
-<form class="bg-white mb-5" id="form_profile" oninput="formExperience.value=parseInt(form_experience.value)"
+<form class="bg-white mb-5" id="form-profile" oninput="formExperience.value=parseInt(form_experience.value)"
     method="POST" action="http://kj-taxi.by/">
     <fieldset class="">
         <legend class="bg-dark text-white p-3">Анкета водителя</legend>
@@ -15,20 +15,20 @@
         </div>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-6">
-                <label for="form_middlename" class="m-0">Отчество</label>
-                <input type="text" class="form-control" id="form_middlename" placeholder="Barrysowich"
+                <label for="form-middlename" class="m-0">Отчество</label>
+                <input type="text" class="form-control" id="form-middlename" placeholder="Barrysowich"
                     name="middlename">
             </div>
             <div class="form-group col-md-6">
-                <label for="form_birthday" class="m-0">Дата рождения</label>
-                <input type="date" class="form-control" id="form_birthday" value="1967-07-26" name="birthday"
+                <label for="form-birthday" class="m-0">Дата рождения</label>
+                <input type="date" class="form-control" id="form-birthday" value="1967-07-26" name="birthday"
                     min="1960-01-01" max="2007-12-31" required>
             </div>
         </div>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-6">
-                <label for="form_region" class="m-0">Место проживания</label>
-                <select id="form_region" class="form-control" name="region">
+                <label for="form-region" class="m-0">Место проживания</label>
+                <select id="form-region" class="form-control" name="region">
                     <option selected>Минская обл.</option>
                     <option>Витебская обл.</option>
                     <option>Могилёвская обл.</option>
@@ -38,9 +38,9 @@
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="form_locality" class="m-0">город/поселок</label>
-                <input type="text" class="form-control" id="form_locality" placeholder="д. Великая Борздынь"
-                    name="locality" required>
+                <label for="form-locality" class="m-0">город/поселок</label>
+                <input type="text" class="form-control" id="form-locality" placeholder="д. Великая Борздынь"
+                    name="locality" >
             </div>
         </div>
         <div class="form-row pl-3 pr-3">
@@ -53,31 +53,31 @@
         </div>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-6">
-                <label for="form_carbrand" class="m-0">Марка и модель автомобиля</label>
-                <input type="text" class="form-control" id="form_carbrand" placeholder="Audi A8 6.0 W12" name="carbrand"
-                    required>
+                <label for="form-carbrand" class="m-0">Марка и модель автомобиля</label>
+                <input type="text" class="form-control" id="form-carbrand" placeholder="Audi A8 6.0 W12" name="carbrand"
+                required>
             </div>
             <div class="form-group col-md-6">
-                <label for="form_caryear" class="m-0">год выпуска</label>
-                <input type="number" class="form-control" id="form_caryear" min="2010" step="1" name="caryear" required>
+                <label for="form-caryear" class="m-0">год выпуска</label>
+                <input type="number" class="form-control" id="form-caryear" min="2010" step="1" name="caryear" required>
             </div>
         </div>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-6">
-                <label for="form_name" class="m-0">email</label>
-                <input type="email" class="form-control" id="form_email" placeholder="transporter@kj-group.com"
+                <label for="form-name" class="m-0">email</label>
+                <input type="email" class="form-control" id="form-email" placeholder="transporter@kj-group.com"
                     name="email">
             </div>
             <div class="form-group col-md-6">
-                <label for="form_surname" class="m-0">телефон</label>
-                <input type="number" class="form-control" id="form_phone" placeholder="+375 29 391-77-16" name="phone"
-                    required>
+                <label for="form-surname" class="m-0">телефон</label>
+                <input type="number" class="form-control" id="form-phone" placeholder="+375 29 391-77-16" name="phone"
+                required>
             </div>
         </div>
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-12">
-                <label for="form_comment" class="m-0">Комментарий к анкете</label>
-                <textarea class="form-control" id="form_comment" rows="3"
+                <label for="form-comment" class="m-0">Комментарий к анкете</label>
+                <textarea class="form-control" id="form-comment" rows="3"
                     placeholder="Если есть предпочтения по службам такси, укажи это в комментарии"
                     name="comment"></textarea>
             </div>
@@ -85,11 +85,57 @@
         <div class="form-row pl-3 pr-3">
             <div class="form-group col-md-12">
                 <!-- reCAPTCHA -->
-                
+                <div class="g-recaptcha" data-sitekey="6LdoErwUAAAAAEsxizHcfWa8eXPGUSavhZrRsXLk"></div>
             </div>
         </div>
         <button type="submit" class="btn btn-lg btn-secondary btn-block rounded-0">Отправить анкету</button>
     </fieldset>
 </form>
 
+<script>
+    document.getElementById('form-profile').addEventListener('submit', submitForm);
+
+    function submitForm(e) {
+        e.preventDefault();
+        const name = document.querySelector('#form-name').value;
+        const surname = document.querySelector('#form-surname').value;
+        const middlename = document.querySelector('#form-middlename').value;
+        const birthday = document.querySelector('#form-birthday').value;
+        const region = document.querySelector('#form-region').value;
+        const locality = document.querySelector('#form-locality').value;
+        const experience = document.querySelector('#form_experience').value;
+        const carbrand = document.querySelector('#form-carbrand').value;
+        const caryear = document.querySelector('#form-caryear').value;
+        const email = document.querySelector('#form-email').value;
+        const phone = document.querySelector('#form-phone').value;
+        const comment = document.querySelector('#form-comment').value;
+        const captcha = document.querySelector('#g-recaptcha-response').value;
+
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ name: name,
+                surname: surname,
+                middlename:middlename,
+                birthday:birthday,
+                region:region,
+                locality:locality,
+                experience:experience,
+                carbrand:carbrand,
+                caryear:caryear,
+                email:email,
+                phone:phone,
+                comment:comment,
+                captcha: captcha })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                alert(data.msg);
+            });
+    }    
+</script>
 <!-- конец: Форма заявки -->

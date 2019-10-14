@@ -2,7 +2,7 @@
 
 //Scroll to form
 var scroll_btn = document.querySelector('.scroll-to-form-btn');
-const form_profile= document.getElementById('form_profile');
+const form_profile= document.getElementById('form-profile');
 const y_coordinate_form_profile = form_profile.getBoundingClientRect().top + window.pageYOffset;
 const yOffset = -120;
 function handleButtonClick() {
@@ -14,7 +14,7 @@ function handleButtonClick() {
 scroll_btn.addEventListener('click', handleButtonClick);
 
 var focusMethod = function() {
-    document.getElementById("form_name").focus();
+    document.getElementById("form-name").focus();
 }
 
 //Scroll to contact

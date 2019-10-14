@@ -5,6 +5,7 @@ $(document).ready(function(){
   $('.carousel_taxi-services').slick({
       // centerMode: true,
       // centerPadding: '60px',
+      arrows: true,
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -13,7 +14,7 @@ $(document).ready(function(){
           {
               breakpoint: 768,
               settings: {
-                  arrows: false,
+                  arrows: true,
                   centerMode: true,
                   centerPadding: '40px',
                   slidesToShow: 2
