@@ -44,7 +44,7 @@ gulp.task('scripts', function () {
 gulp.task('purgecss', () => {
     return gulp.src('app/css/style.css')
         .pipe(purgecss({
-            content: ['app/css/*.html', 'app/js/*.js' ]
+            content: ['app/css/*.html', 'app/js/**/*.js' ]
         }))
         .pipe(gulp.dest('app/buildcss'))
 });
