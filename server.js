@@ -19,76 +19,73 @@ var user_date;
 
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.render('index');
 });
 
-
-
-app.post('', (req, res) =>{
+app.post('', (req, res) => {
+    const message = {
+        from: 'KJ-taxi.by <kjgrouptaxi@gmail.com>', // sender address
+        to: `kjgrouptaxi@gmail.com`, // list of receivers
+        subject: 'New driver registration', // Subject line
+        html: `<table style="max-width:580px">        
+<tr>
+    <td>${req.body.name}</td>
+    <td>${req.body.surname}</td>
+    <td>${req.body.middlename}</td>
+</tr>
+<tr>
+    <td>${req.body.birthday}</td>
+    <td>${req.body.region}</td>
+    <td>${req.body.locality}</td>
+</tr>
+<tr>
+    <td>Опыт: ${req.body.experience} лет</td>
+    <td>${req.body.carbrand}</td>
+    <td>${req.body.caryear} года</td>
+</tr>
+<tr>
+    <td colspan="2">${req.body.email}</td>
+    <td>${req.body.phone}</td>
+</tr>
+<tr>
+    <td colspan="3">${req.body.comment}</td>
+</tr>
+</table>`
+    }
     if(
-        req.body.captcha === undefined ||
-        req.body.captcha === '' ||
-        req.body.captcha === null
-    ){
-        return res.json({'success': false, "msg":"Check the captcha please if you are not the robot."});
-    };
-        //Secret key
-        const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
+            req.body.captcha === undefined ||
+                req.body.captcha === '' ||
+                req.body.captcha === null
+    ) {
+    return res.json({ 'success': false, "msg": 'Поставьте галочку "I`am not the robot" в самом низу формы' });
+};
+//Secret key
+const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
 
-        //Verify URL
-        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+//Verify URL
+const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
 
-        //Make Request To Verify
-        request(verifyUrl, (err, response, body) =>{
-            body = JSON.parse(body);
+//Make Request To Verify
+request(verifyUrl, (err, response, body) => {
+    body = JSON.parse(body);
 
-            //If no successful
-            if(body.success !== undefined && !body.success){
-                return res.json({'success': false, "msg":"Failed captcha verification"});
-            }
+    //If no successful
+    if (body.success !== undefined && !body.success) {
+        return res.json({ 'success': false, "msg": 'Проверка "I`am not the robot" не пройдена' });
+    }
 
-            //If successful
-            // return res.json({'success': false, "msg":"Capctcha passed"});
-            app.post(``, (req, res) =>{
-                const message = {
-                from: 'KJ-taxi.by <kjgrouptaxi@gmail.com>', // sender address
-                to: `kjgrouptaxi@gmail.com`, // list of receivers
-                subject: 'New driver registration', // Subject line
-                html: `<table style="max-width:580px">
-            <tr>
-                <td>${req.body.name}</td>
-                <td>${req.body.surname}</td>
-                <td>${req.body.middlename}</td>
-            </tr>
-            <tr>
-                <td>${req.body.birthday}</td>
-                <td>${req.body.region}</td>
-                <td>${req.body.locality}</td>
-            </tr>
-            <tr>
-                <td>Опыт: ${req.body.experience} лет</td>
-                <td>${req.body.carbrand}</td>
-                <td>${req.body.caryear} года</td>
-            </tr>
-            <tr>
-                <td colspan="2">${req.body.email}</td>
-                <td>${req.body.phone}</td>
-            </tr>
-            <tr>
-                <td colspan="3">${req.body.comment}</td>
-            </tr>
-            </table>`
-            
-                };
-                mailer(message);
-                user_date = req.body;
-                res.render('success', {data: req.body});
-            });
-            
-            
-        });
+    //If successful
+    return res.json({ 'success': true, "msg": 'Заявка отправлена!' }),
+    console.log('json msg'),
+    mailer(message),
+    console.log('messange send');
+    // user_date = req.body,
+    // res.render('success', { data: req.user_date }),
+    // console.log('render');
+    });
     
+
 });
 
 app.listen(PORT, () => console.log(`server listening at http://localhost:3000/`));
