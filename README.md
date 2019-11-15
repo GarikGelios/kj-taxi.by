@@ -9,5 +9,4 @@ npm i gulp --save-dev
 npm i gulp-sass --save-dev
 npm i browser-sync --save-dev
 npm i gulp-autoprefixer --save-dev
-npm i gulp-inline-css --save-dev 
 ```

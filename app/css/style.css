@@ -15988,6 +15988,12 @@ body {
   border-color: #F7C119 !important;
 }
 
+.f-basis-achiev li {
+  -webkit-flex-basis: 550px;
+      -ms-flex-preferred-size: 550px;
+          flex-basis: 550px;
+}
+
 .bg-dark-op {
   background-color: rgba(0, 0, 0, 0.8) !important;
 }
