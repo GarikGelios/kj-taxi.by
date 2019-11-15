@@ -102,3 +102,8 @@ h1 {
 .border-warning {
   border-color: $primary-color!important;
 }
+.f-basis-achiev{
+  li{
+    flex-basis: 550px;
+  }
+}

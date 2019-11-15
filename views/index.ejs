@@ -4,11 +4,13 @@
 
 <body class="d-flex flex-column flex-nowrap m-0">
     <main class="flex-shrink-0">
-        <% include blocks/nav.ejs %>
+        <header>
+            <% include blocks/nav.ejs %>
+        </header>
         <!-- Главный экран -->
         <% include blocks/first-screen.ejs %>
         <!-- Текст и контактная форма с анкетой для соискателя -->
-        <div class="container mt-md-20-sm-7 pt-5">
+        <section class="container mt-md-20-sm-7 pt-5">
             <div class="row">
                 <div class="col-md-6">
                     <% include blocks/text-near-form.ejs %>
@@ -17,7 +19,7 @@
                     <% include blocks/form.ejs %>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Карусель с доступными службами такси -->
         <% include blocks/services.ejs %>
         <!-- Приемущества сотрудничества с перевозчиков KJ-GROUP -->
