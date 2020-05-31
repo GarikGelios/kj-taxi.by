@@ -1,12 +1,7 @@
-# ProjectArchetype
-the basic architecture of the project in the GULP build 
+# KJ-TAXI
 
-install in project folder
+## Установка (локально)
 
-```
-npm init
-npm i gulp --save-dev
-npm i gulp-sass --save-dev
-npm i browser-sync --save-dev
-npm i gulp-autoprefixer --save-dev
-```
+1. Клонируй проект в локальный репозиторий и установи в нём зависимости ``npm install``
+
+2. Запускай сайт ``npm start`` и переходи по адресу, что указан в консоли

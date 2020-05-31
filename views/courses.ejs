@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<% include blocks/head.ejs %>
+
+<body class="d-flex flex-column flex-nowrap m-0">
+    <main class="flex-shrink-0">
+        <header>
+            <% include blocks/nav.ejs %>
+        </header>
+        <!-- Главный экран -->
+        <% include blocks/first-screen-courses.ejs %>
+        <!-- Текст и контактная форма с анкетой для соискателя -->
+        <section class="container mt-md-20-sm-7 pb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-uppercase bg-yellow-md">Выдаваемые документы и программа обучения соответствуют требованиям нормативного правового акта Министерства транспорта и коммуникаций Республики Беларусь от 17.07.1997 №167-Ц «О дополнительных мерах по государственному регулированию перевозок пассажиров автомобилями-такси» (8/4605, 19.12.2000г.)</p>
+                </div>
+            </div>
+        </section>
+        <!-- Приемущества курсов в KJ-GROUP -->
+        <% include blocks/achiev-courses.ejs %>
+        <!-- Программа курсов -->
+        <% include blocks/program-courses.ejs %>
+    </main>
+    <% include blocks/footer.ejs %>
+    <!-- подключаемый скрипты -->
+    <% include blocks/scripts.ejs %>
+</body>
+
+</html>

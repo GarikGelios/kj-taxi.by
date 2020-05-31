@@ -1,36 +1,43 @@
 <nav class="navbar navbar-expand-md fixed-top bg-dark-op">
-  <a class="navbar-brand font-weight-bold text-white" href="#">
-      <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
-      KJ-GROUP
-  </a>
-  <button class="nav-link btn btn-primary rounded-pill mx-auto scroll-to-form-btn" onclick="focusMethod()">
-      Заполнить анкету<span class="sr-only">(current)</span></button>
-  <div class="navbar-toggler" role="tree" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="burger_menu burger_cross burger_menu--1">
-                   <!-- https://codepen.io/Zaku/pen/ejLNJL -->
-                   <label class="burger_label">
-                       <input type="checkbox" class="burger_input">
-                       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                           <circle cx="50" cy="50" r="30"/>
-                           <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35"/>
-                           <path class="line--2" d="M0 50h70"/>
-                           <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65"/>
-                       </svg>
-                   </label>
-               </span>
-  </div>
-  <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav col-xl-12 justify-content-between">
-          <li class="nav-item">
-              <button class="nav-link btn btn-link text-white scroll-to-services-btn" tabindex="-1" aria-disabled="true">Службы такси</button>
-          </li>
-          <li class="nav-item">
-              <button class="nav-link btn btn-link text-white scroll-to-conditions-btn" tabindex="-1" aria-disabled="true">Условия перевозчика</button>
-          </li>
-          <li class="nav-item">
-              <button class="nav-link btn btn-link text-white scroll-to-contacts-btn" tabindex="-1" aria-disabled="true">Контакты</button>
-          </li>
-      </ul>
-  </div>
+    <a class="navbar-brand font-weight-bold text-white" href="/">
+        <img src="assets/kj-logo.png" width="82" height="28" class="d-inline-block align-top" alt="TAXI">
+        KJ-GROUP
+    </a>
+    <a class="nav-link btn btn-primary rounded-pill mx-auto scroll-to-form-btn" href="/#form">
+        Заполнить анкету<span class="sr-only">(current)</span></a>
+
+    <a class="nav-link btn btn-primary rounded-pill mx-auto scroll-to-form-btn" href="/courses">
+        Курсы такси<span class="sr-only">(current)</span></a>
+
+    <div class="navbar-toggler" role="tree" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="burger_menu burger_cross burger_menu--1">
+            <!-- https://codepen.io/Zaku/pen/ejLNJL -->
+            <label class="burger_label">
+                <input type="checkbox" class="burger_input">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="30" />
+                    <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+                    <path class="line--2" d="M0 50h70" />
+                    <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+                </svg>
+            </label>
+        </span>
+    </div>
+    <div class="collapse navbar-collapse col-xl-6 justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav col-xl-12 justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link btn btn-link text-white scroll-to-services-btn" tabindex="-1" href="/#services"
+                    aria-disabled="true">Службы такси</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-link text-white scroll-to-conditions-btn" tabindex="-1" href="/#conditions"
+                    aria-disabled="true">Условия перевозчика</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-link text-white scroll-to-contacts-btn" tabindex="-1" href="#contacts"
+                    aria-disabled="true">Контакты</a>
+            </li>
+        </ul>
+    </div>
 </nav>

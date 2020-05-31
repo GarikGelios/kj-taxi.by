@@ -10,12 +10,12 @@
         <!-- Главный экран -->
         <% include blocks/first-screen.ejs %>
         <!-- Текст и контактная форма с анкетой для соискателя -->
-        <section class="container mt-md-20-sm-7 pt-5">
+        <section class="container mt-md-20-sm-7">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 pt-5">
                     <% include blocks/text-near-form.ejs %>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 pt-5" id="form">
                     <% include blocks/form.ejs %>
                 </div>
             </div>
@@ -34,6 +34,7 @@
     <% include blocks/footer.ejs %>
     <!-- подключаемый скрипты -->
     <% include blocks/scripts.ejs %>
+    <script src="js/customjs/slick-slider.js" async defer></script>
 </body>
 
 </html>

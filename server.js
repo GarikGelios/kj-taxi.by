@@ -23,6 +23,11 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+//редирект на страницу курсов
+app.get('/courses', function (req, res) {
+    res.render('courses');
+});
+
 app.post('', (req, res) => {
     const message = {
         from: 'KJ-taxi.by <kjgrouptaxi@gmail.com>', // sender address
