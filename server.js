@@ -66,7 +66,7 @@ app.post('', (req, res) => {
     return res.json({ 'success': false, "msg": 'Поставьте галочку "I`am not the robot" в самом низу формы' });
 };
 //Secret key
-const secretKey = '6LdoErwUAAAAAIoiNAWZaaQsVgaO4LjnBAv0gNjU';
+const secretKey = 'hidden';
 
 //Verify URL
 const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
